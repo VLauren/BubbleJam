@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsgjs18b0v7vg"]
+[gd_scene load_steps=3 format=3 uid="uid://bsgjs18b0v7vg"]
 
 [ext_resource type="PackedScene" uid="uid://mev7r26i6pax" path="res://Scenes/character.tscn" id="1_ifjge"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_32dj5"]
+shading_mode = 0
+albedo_color = Color(0.374816, 0.556871, 0.248993, 1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -12,6 +16,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.752, 2.561, 40.321)
 fov = 20.0
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.81697, -1.58773, -0.233214)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.80994, -1.59502, -0.226507)
 use_collision = true
 size = Vector3(17.4908, 1.55762, 3.55029)
+material = SubResource("StandardMaterial3D_32dj5")
