@@ -4,4 +4,4 @@
 resource_name = "M_PastillaOscuro"
 cull_mode = 2
 shading_mode = 0
-albedo_color = Color(0, 0, 0, 1)
+albedo_color = Color(0.78, 0.71136, 0.6084, 1)

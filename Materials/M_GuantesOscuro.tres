@@ -4,4 +4,4 @@
 resource_name = "M_PielOscuro"
 shading_mode = 0
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.88, 0.775867, 0.2552, 1)
+albedo_color = Color(0.835294, 0.588235, 0.254902, 1)

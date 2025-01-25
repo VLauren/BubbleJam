@@ -1,26 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://rh4qft7sotor"]
+[gd_scene load_steps=12 format=3 uid="uid://rh4qft7sotor"]
 
 [ext_resource type="PackedScene" uid="uid://bs7sai2tuoww0" path="res://Scenes/camera.tscn" id="1_whuoq"]
 [ext_resource type="PackedScene" uid="uid://7wl1lrith1tu" path="res://Scenes/mainChar.tscn" id="3_8wv54"]
 [ext_resource type="PackedScene" uid="uid://b5xegt20ea1kd" path="res://Scenes/trigger_level_end.tscn" id="3_33rye"]
+[ext_resource type="PackedScene" uid="uid://bq7kghgpeh8v8" path="res://Meshes/Escenario/Edificio1.glb" id="4_6psf5"]
+[ext_resource type="PackedScene" uid="uid://bawtsw6op2rg" path="res://Meshes/Escenario/Edificio2.glb" id="5_jttmh"]
+[ext_resource type="PackedScene" uid="uid://7pqin1tubmjs" path="res://Meshes/Escenario/Edificio3.glb" id="6_xrc4p"]
+[ext_resource type="PackedScene" uid="uid://5uxvvf171qtx" path="res://Meshes/Escenario/Pared.glb" id="7_sbbfn"]
+[ext_resource type="PackedScene" uid="uid://dtutmtesa5ebd" path="res://Meshes/Escenario/Vigas.glb" id="8_ccrqg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_32dj5"]
 shading_mode = 0
 albedo_color = Color(0.374816, 0.556871, 0.248993, 1)
 
+[sub_resource type="QuadMesh" id="QuadMesh_vhon6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wat6q"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.1428, 0.213687, 0.28, 0.443137)
+
 [node name="Node3D" type="Node3D"]
+transform = Transform3D(0.993791, 0, 0, 0, 0.993791, 0, 0, 0, 0.993791, 0, 0, 0)
 
 [node name="Camera" parent="." instance=ExtResource("1_whuoq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75051, 2.53023, 40.3495)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1.46464, 0, 0, 0, 1, 0, 0, 0, 1, 6.17431, -4.00586, -0.233667)
+transform = Transform3D(1.46464, 0, 0, 0, 1, 0, 0, 0, 1, 9.41061, -4.00586, -0.233667)
+visible = false
 use_collision = true
-size = Vector3(14.5681, 6.42944, 3.55029)
+size = Vector3(21.9841, 6.42944, 3.55029)
 material = SubResource("StandardMaterial3D_32dj5")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.9149, 5.56675, -0.455801)
+visible = false
 use_collision = true
 size = Vector3(5.41046, 1.92818, 2.99512)
 
@@ -31,11 +46,13 @@ size = Vector3(5.41046, 1.92818, 2.99512)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25193, 18.3058, -0.876991)
+visible = false
 use_collision = true
 size = Vector3(11.9626, 19.7375, 2.99512)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.675, 22.3181, -0.876991)
+visible = false
 use_collision = true
 size = Vector3(11.9626, 23.7383, 2.99512)
 
@@ -44,3 +61,70 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.05287, 36.8422, -0.411594)
 
 [node name="MainCharacter" parent="." instance=ExtResource("3_8wv54")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.38418, -0.485103, -0.334252)
+
+[node name="Edificio12" parent="." instance=ExtResource("4_6psf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.2187, -3.8147e-06, -2.49556)
+
+[node name="Edificio22" parent="." instance=ExtResource("5_jttmh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.558091, 9.34836, -53.5288, 1.74237)
+
+[node name="Edificio23" parent="." instance=ExtResource("5_jttmh")]
+transform = Transform3D(0.799153, 0, -1.77636e-15, 0, 0.514546, 0, -3.55271e-15, 0, 0.422454, -4.08711, 8.35098, -1.1177)
+
+[node name="Edificio32" parent="." instance=ExtResource("6_xrc4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.21222, -29.9211, -54.1174)
+
+[node name="Edificio33" parent="." instance=ExtResource("6_xrc4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2028, -29.9211, -105.885)
+
+[node name="Pared2" parent="." instance=ExtResource("7_sbbfn")]
+transform = Transform3D(2.8377, 0, 0, 0, 4.46401e-08, 1.01265, 0, -1.50157, 1.89182e-08, 23.8016, 5.59891, -0.463636)
+
+[node name="Pared3" parent="." instance=ExtResource("7_sbbfn")]
+transform = Transform3D(2.84504, 0, 0, 0, 1.00247, 0, 0, 0, 1.59526, 61.9962, 7.4784, -0.463636)
+
+[node name="Vigas2" parent="." instance=ExtResource("8_ccrqg")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5.95399, -8.63924, -9.17856)
+
+[node name="Vigas3" parent="." instance=ExtResource("8_ccrqg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1648, -23.6093, -8.1488)
+
+[node name="Vigas4" parent="." instance=ExtResource("8_ccrqg")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 36.6085, -23.7654, -8.1488)
+
+[node name="Vigas5" parent="." instance=ExtResource("8_ccrqg")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 44.5563, -23.7654, -8.1488)
+
+[node name="Vigas8" parent="." instance=ExtResource("8_ccrqg")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 36.6085, -7.44144, -8.1488)
+
+[node name="Vigas9" parent="." instance=ExtResource("8_ccrqg")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 44.5563, -39.8822, -8.1488)
+
+[node name="Vigas10" parent="." instance=ExtResource("8_ccrqg")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 36.6085, -38.5308, -8.1488)
+
+[node name="Vigas11" parent="." instance=ExtResource("8_ccrqg")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 44.5563, -6.09008, -8.1488)
+
+[node name="Vigas6" parent="." instance=ExtResource("8_ccrqg")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 61.9305, -15.2047, -4.32093)
+
+[node name="Vigas12" parent="." instance=ExtResource("8_ccrqg")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 61.9305, -35.2454, -4.32093)
+
+[node name="Vigas7" parent="." instance=ExtResource("8_ccrqg")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 61.9305, 7.17734, -4.32093)
+
+[node name="Edificio24" parent="." instance=ExtResource("5_jttmh")]
+transform = Transform3D(0.369103, 0, -4.93543e-15, 0, 0.446195, 0, -2.5083e-15, 0, 0.405904, 40.336, 10.4422, -0.090905)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(74.709, 0, 0, 0, 49.1725, 0, 0, 0, 1, -0.235597, -6.27322, -31.9178)
+mesh = SubResource("QuadMesh_vhon6")
+surface_material_override/0 = SubResource("StandardMaterial3D_wat6q")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(134.463, 0, 0, 0, 49.1725, 0, 0, 0, 0.0954345, -0.703176, -6.27322, -92.8544)
+mesh = SubResource("QuadMesh_vhon6")
+surface_material_override/0 = SubResource("StandardMaterial3D_wat6q")

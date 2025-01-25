@@ -35,19 +35,19 @@ _subresources={
 "materials": {
 "M_CRistalEncendido": {
 "use_external/enabled": true,
-"use_external/path": "res://Meshes/Escenario/M_CRistalEncendido.tres"
+"use_external/path": "res://Materials/Escenario/M_CRistalEncendido.tres"
 },
 "M_Cristal": {
 "use_external/enabled": true,
-"use_external/path": "res://Meshes/Escenario/M_Cristal.tres"
+"use_external/path": "res://Materials/Escenario/M_Cristal.tres"
 },
 "M_Edificio": {
 "use_external/enabled": true,
-"use_external/path": "res://Meshes/Escenario/M_Edificio.tres"
+"use_external/path": "res://Materials/Escenario/M_Edificio.tres"
 },
 "M_EdificioOscuro": {
 "use_external/enabled": true,
-"use_external/path": "res://Meshes/Escenario/M_EdificioOscuro.tres"
+"use_external/path": "res://Materials/Escenario/M_EdificioOscuro.tres"
 }
 }
 }
