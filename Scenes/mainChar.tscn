@@ -32,5 +32,7 @@ surface_material_override/0 = ExtResource("2_nj37i")
 [node name="CharacterBase" parent="." instance=ExtResource("3_dsa1f")]
 transform = Transform3D(-1.74846e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.74846e-08, 0, -0.814742, 0)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="area_shape_entered" from="Bubble" to="." method="_on_bubble_area_shape_entered"]
 [connection signal="body_entered" from="Bubble" to="." method="_on_bubble_body_entered"]

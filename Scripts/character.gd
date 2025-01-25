@@ -20,21 +20,34 @@ var lastAnimationName = ""
 
 var dead = false
 
+var musicFast : AudioStreamPlayer2D
+var musicSlow : AudioStreamPlayer2D
 
 func _ready() -> void:
 	$CharacterBase/AnimationPlayer.play("Idle 1")
-
-
+	musicFast = AudioManagerGlobal.play_sound("res://Audio/gamplay_fast.ogg")
+	musicSlow = AudioManagerGlobal.play_sound("res://Audio/gamplay_slow.ogg")
+	# musicFast.volume_db = -20
+	# musicSlow.volume_db = -20
+	
 func _process(delta: float) -> void:
 	if(Input.is_action_pressed("ui_cancel")):
 		get_tree().quit()
 		
+		
+
 	if(dead):
 		return
 		
 	$Bubble.scale = Vector3.ONE * move_toward($Bubble.scale.x, target_bubble_size, 0.1)
 	if(target_bubble_size < 0.2):
 		$Bubble.scale = Vector3.ONE * 0.001
+		musicFast.volume_db = move_toward(musicFast.volume_db, 0, 0.5)
+		musicSlow.volume_db = move_toward(musicSlow.volume_db, -20, 0.5)
+	else:
+		musicFast.volume_db = move_toward(musicFast.volume_db, -20, 0.5)
+		musicSlow.volume_db = move_toward(musicSlow.volume_db, 0, 0.5)
+	
 	
 	var rot : float
 	rot = $CharacterBase.rotation.y
@@ -54,6 +67,8 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	if(dead):
+		musicFast.volume_db = move_toward(musicFast.volume_db, -60, 0.3)
+		musicSlow.volume_db = move_toward(musicSlow.volume_db, -60, 0.3)
 		return
 		
 	# gravedad
@@ -166,8 +181,12 @@ func death():
 	
 	# VFX, SFX
 	
+	AudioManagerGlobal.play_sound("res://Audio/muerte.ogg")
+	
 	await get_tree().create_timer(3).timeout
 	
+	musicFast.stop()
+	musicSlow.stop()
 	get_tree().reload_current_scene()
 	
 

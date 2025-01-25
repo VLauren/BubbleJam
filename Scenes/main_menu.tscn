@@ -28,3 +28,5 @@ grow_vertical = 2
 text = "Main Menu"
 label_settings = SubResource("LabelSettings_a3haa")
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
