@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3swmces4rcbq"]
+
+[ext_resource type="PackedScene" uid="uid://bq7kghgpeh8v8" path="res://Meshes/Escenario/Edificio1.glb" id="1_gclxk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gm6vr"]
+shading_mode = 0
+albedo_color = Color(0.374816, 0.556871, 0.248993, 1)
+
+[node name="Edificio1wtc" instance=ExtResource("1_gclxk")]
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Edificio1" index="0"]
+transform = Transform3D(0.0495922, 0, 0, 0, 6.35656, 0, 0, 0, 7.93916, 15.5346, 20.5837, -9.69343)
+visible = false
+use_collision = true
+size = Vector3(21.9841, 6.42944, 3.55029)
+material = SubResource("StandardMaterial3D_gm6vr")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Edificio1" index="1"]
+transform = Transform3D(0.0454526, 0, 0, 0, 6.35656, 0, 0, 0, 7.93916, -15.5215, 20.5837, -9.69343)
+visible = false
+use_collision = true
+size = Vector3(21.9841, 6.42944, 3.55029)
+material = SubResource("StandardMaterial3D_gm6vr")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Edificio1" index="2"]
+transform = Transform3D(-2.16484e-09, 0, 9.06054, 0, 6.35657, 0, -0.0495259, 0, -3.96049e-07, -0.00146294, 20.5837, -23.3659)
+visible = false
+use_collision = true
+size = Vector3(21.9841, 6.42944, 3.55029)
+material = SubResource("StandardMaterial3D_gm6vr")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Edificio1" index="3"]
+transform = Transform3D(-2.18412e-09, 0, 9.06054, 0, 6.35657, 0, -0.0499669, 0, -3.96049e-07, -0.00146294, 20.5837, 3.97901)
+visible = false
+use_collision = true
+size = Vector3(21.9841, 6.42944, 3.55029)
+material = SubResource("StandardMaterial3D_gm6vr")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Edificio1" index="4"]
+transform = Transform3D(-1.84613e-09, 0, 8.9819, -0.0422346, -1.91188e-07, -3.92611e-07, 1.84613e-09, -4.37387, 1.71616e-14, 0.106287, 40.3729, -9.70569)
+visible = false
+use_collision = true
+size = Vector3(21.9841, 6.42944, 3.55029)
+material = SubResource("StandardMaterial3D_gm6vr")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Edificio1" index="5"]
+transform = Transform3D(-1.84613e-09, 0, 9.06136, -0.0422346, -1.91188e-07, -3.96085e-07, 1.84613e-09, -4.37387, 1.73134e-14, 0.0480709, 0.508096, -9.70569)
+visible = false
+use_collision = true
+size = Vector3(21.9841, 6.42944, 3.55029)
+material = SubResource("StandardMaterial3D_gm6vr")
