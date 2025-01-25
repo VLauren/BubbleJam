@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://chlwhmulolyaj"]
+
+[resource]
+resource_name = "M_EdificioOscuro"
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+metallic = 1.0
+emission_enabled = true
+emission = Color(0.195843, 0.176424, 0.174232, 1)
