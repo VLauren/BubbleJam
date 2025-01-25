@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://j3a07clu7bpq"
-path="res://.godot/imported/SeñalFinal.glb-0c4f9c12fb560018918d79ac4a92f121.scn"
+uid="uid://dktrtn1sh6rdn"
+path="res://.godot/imported/SetLimpieza.glb-d4c87de8c74f4f6ecc752755f86fd15a.scn"
 
 [deps]
 
-source_file="res://Meshes/SeñalFinal.glb"
-dest_files=["res://.godot/imported/SeñalFinal.glb-0c4f9c12fb560018918d79ac4a92f121.scn"]
+source_file="res://Meshes/Escenario/SetLimpieza.glb"
+dest_files=["res://.godot/imported/SetLimpieza.glb-d4c87de8c74f4f6ecc752755f86fd15a.scn"]
 
 [params]
 
@@ -33,21 +33,29 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"M_Botas": {
+"M_Cepillo": {
 "use_external/enabled": true,
-"use_external/path": "res://Materials/Escenario/M_VigasOscuro.tres"
+"use_external/path": "res://Materials/M_PastillaOscuro.tres"
 },
-"M_Señal": {
+"M_Cubos": {
 "use_external/enabled": true,
-"use_external/path": "res://Materials/Escenario/M_Señal.tres"
+"use_external/path": "res://Materials/M_Guantes.tres"
 },
-"M_SeñalOscuro": {
+"M_CubosOscuro": {
 "use_external/enabled": true,
-"use_external/path": "res://Materials/Escenario/M_SeñalOscuro.tres"
+"use_external/path": "res://Materials/M_GuantesOscuro.tres"
 },
-"M_VigasOscuro": {
+"M_Escobilla": {
 "use_external/enabled": true,
-"use_external/path": "res://Materials/Escenario/M_Vigas.tres"
+"use_external/path": "res://Materials/Escenario/M_CajaOscuro.tres"
+},
+"M_Madera": {
+"use_external/enabled": true,
+"use_external/path": "res://Materials/Escenario/M_CajaBrillo.tres"
+},
+"M_Tapadera": {
+"use_external/enabled": true,
+"use_external/path": "res://Materials/Escenario/M_Tapadera.tres"
 }
 }
 }

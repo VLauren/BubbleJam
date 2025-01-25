@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://chnd8tgfhoiwa"]
+
+[ext_resource type="PackedScene" uid="uid://chriuoua2rchm" path="res://Meshes/Escenario/Caja.glb" id="1_prna0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l1a4o"]
+shading_mode = 0
+albedo_color = Color(0.374816, 0.556871, 0.248993, 1)
+
+[node name="CajaWtc" instance=ExtResource("1_prna0")]
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0262907, 2.45314, -0.00017792)
+visible = false
+use_collision = true
+size = Vector3(4.80639, 4.68041, 4.75433)
+material = SubResource("StandardMaterial3D_l1a4o")
