@@ -13,7 +13,7 @@ var gravity_1 = 20
 var gravity_2 = 4
 var jump_count = 0
 var cant_jump = false
-var target_bubble_size = 0
+var target_bubble_size = 0.001
 var input_dir : Vector2
 
 var lastAnimationName = ""
@@ -30,8 +30,8 @@ func _process(delta: float) -> void:
 		return
 		
 	$Bubble.scale = Vector3.ONE * move_toward($Bubble.scale.x, target_bubble_size, 0.1)
-	if(target_bubble_size == 0):
-		$Bubble.scale = Vector3.ZERO
+	if(target_bubble_size < 0.1):
+		$Bubble.scale = Vector3.ONE * 0.001
 	
 	var rot : float
 	rot = $CharacterBase.rotation.y
@@ -128,8 +128,7 @@ func _physics_process(delta: float) -> void:
 
 func bubbleSizeZero():
 	await get_tree().create_timer(0.2).timeout
-	target_bubble_size = 0
-	
+	target_bubble_size = 0.001
 	
 
 func fall():

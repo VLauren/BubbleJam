@@ -4,4 +4,4 @@
 resource_name = "M_CajaBrillo"
 cull_mode = 2
 shading_mode = 0
-albedo_color = Color(0, 0, 0, 1)
+albedo_color = Color(0.48, 0.31008, 0.1968, 1)

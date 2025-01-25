@@ -95,8 +95,9 @@ func shoot():
 	
 	state = MOVING
 	
-	await get_tree().create_timer(2).timeout
-	
+	await get_tree().create_timer(0.5).timeout
+	changeAnimation("enemy_idle")
+	await get_tree().create_timer(1.5).timeout
 	canShoot = true
 
 func death():
