@@ -9,6 +9,7 @@ radius = 0.687802
 height = 2.49884
 
 [node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
+floor_snap_length = 0.0
 script = ExtResource("1_ace5i")
 ProjectileScene = ExtResource("2_u2f30")
 
@@ -18,3 +19,6 @@ shape = SubResource("CapsuleShape3D_aw2np")
 
 [node name="EnemyRubish" parent="." instance=ExtResource("3_l56c2")]
 transform = Transform3D(0.207056, 0, 0.772741, 0, 0.8, 0, -0.772741, 0, 0.207056, -0.0986556, -0.758053, 0)
+
+[node name="ProjectileSpawn" type="Node3D" parent="EnemyRubish"]
+transform = Transform3D(0.323525, 0, -1.20741, 0, 1.25, 0, 1.20741, 0, 0.323525, 0.470243, 1.53832, 1.75496)

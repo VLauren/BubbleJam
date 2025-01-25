@@ -29,7 +29,6 @@ func _process(delta: float) -> void:
 	if(dead):
 		return
 		
-	print(target_bubble_size)
 	$Bubble.scale = Vector3.ONE * move_toward($Bubble.scale.x, target_bubble_size, 0.1)
 	if(target_bubble_size < 0.2):
 		$Bubble.scale = Vector3.ONE * 0.001
@@ -68,7 +67,8 @@ func _physics_process(delta: float) -> void:
 		cant_jump = false
 	
 	# tamaño de la pompa
-	target_bubble_size = jump_count * 1.0
+	if(not cant_jump):
+		target_bubble_size = jump_count * 1.0
 	if(target_bubble_size == 0):
 		target_bubble_size = 0.001
 	if(jump_count > 1):
@@ -138,7 +138,8 @@ func fall():
 	cant_jump = true
 	if(velocity.y > -0.5):
 		velocity.y = -0.5
-	cant_jump = true
+	target_bubble_size = 0.001
+	jump_count = 0
 	changeAnimation("JumpCortado")
 
 

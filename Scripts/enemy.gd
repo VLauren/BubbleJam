@@ -32,20 +32,30 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	
-	var rot : float
-	rot = $EnemyRubish.rotation.y
-	if(velocity.x > 0):
-		rot = rotate_toward($EnemyRubish.rotation.y, PI/2+0.01, delta * 6)
-	if(velocity.x < 0):
-		rot = rotate_toward($EnemyRubish.rotation.y, -PI/2-0.01, delta * 6)
-	$EnemyRubish.rotation.y = rot
 		
 	if(state == MOVING):
 		if(position.distance_to(player.position) < 10 && canShoot):
 			state = SHOOTING
 			shoot()
+		var rot : float
+		rot = $EnemyRubish.rotation.y
+		if(velocity.x > 0):
+			rot = rotate_toward($EnemyRubish.rotation.y, PI/2+0.01, delta * 6)
+		if(velocity.x < 0):
+			rot = rotate_toward($EnemyRubish.rotation.y, -PI/2-0.01, delta * 6)
+		$EnemyRubish.rotation.y = rot
+		
 	if(state == SHOOTING):
-		return
+		var rot : float
+		rot = $EnemyRubish.rotation.y
+		if(player.position.x > position.x):
+			rot = rotate_toward($EnemyRubish.rotation.y, PI/2+0.01, delta * 8)
+		if(player.position.x < position.x):
+			rot = rotate_toward($EnemyRubish.rotation.y, -PI/2-0.01, delta * 8)
+		$EnemyRubish.rotation.y = rot
+		
+	if(velocity.x != 0):
+		changeAnimation("enemy_walking")
 	
 func _physics_process(delta: float) -> void:
 	
@@ -81,15 +91,16 @@ func change_direction():
 		changingDirection = false
 
 func shoot():
+	velocity = Vector3.ZERO
 	canShoot = false
 	changeAnimation("enemy_fire")
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0.35).timeout
 	
 	# spawn projectil
 	print("shoot!")
 	var p = ProjectileScene.instantiate()
 	get_tree().root.add_child(p)
-	p.start(transform, player)
+	p.start($EnemyRubish/ProjectileSpawn.global_transform, player)
 	
 	await get_tree().create_timer(0.5).timeout
 	
