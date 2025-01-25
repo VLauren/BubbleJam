@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfs2ohkpc8gji"]
+[gd_scene load_steps=6 format=3 uid="uid://cfs2ohkpc8gji"]
 
 [ext_resource type="PackedScene" uid="uid://bs7sai2tuoww0" path="res://Scenes/camera.tscn" id="1_0ovle"]
 [ext_resource type="PackedScene" uid="uid://b5xegt20ea1kd" path="res://Scenes/trigger_level_end.tscn" id="3_8t0gf"]
 [ext_resource type="PackedScene" uid="uid://7wl1lrith1tu" path="res://Scenes/mainChar.tscn" id="3_rotvl"]
+[ext_resource type="PackedScene" uid="uid://cnn1uu4cq4sae" path="res://Scenes/enemy.tscn" id="4_jxhqf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_32dj5"]
 shading_mode = 0
@@ -51,3 +52,6 @@ level = "res://Scenes/levels/level02.tscn"
 
 [node name="MainCharacter" parent="." instance=ExtResource("3_rotvl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45759, 0.570131, -0.298412)
+
+[node name="Enemy" parent="." instance=ExtResource("4_jxhqf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.7002, 3.32448, -0.28015)

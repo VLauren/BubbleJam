@@ -29,9 +29,9 @@ func _process(delta: float) -> void:
 	var rot : float
 	rot = $CharacterBase.rotation.y
 	if(velocity.x > 0):
-		rot = rotate_toward($CharacterBase.rotation.y, 90, delta * 10)
+		rot = rotate_toward($CharacterBase.rotation.y, PI/2+0.01, delta * 10)
 	if(velocity.x < 0):
-		rot = rotate_toward($CharacterBase.rotation.y, -89, delta * 10)
+		rot = rotate_toward($CharacterBase.rotation.y, -PI/2-0.01, delta * 10)
 	$CharacterBase.rotation.y = rot
 	
 	#animaciones
@@ -85,9 +85,10 @@ func _physics_process(delta: float) -> void:
 		
 
 	# el fast fall
-	if not is_on_floor() and Input.is_action_pressed("ui_down"):
+	if not is_on_floor() and Input.is_action_just_pressed("ui_down"):
 		fall()
-		velocity.y = -4
+		velocity.y = -10
+		
 
 	# input derecha-izquierda
 	input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -123,8 +124,10 @@ func fall():
 func _on_bubble_area_shape_entered(area_rid: RID, area: Area3D, area_shape_index: int, local_shape_index: int) -> void:
 	pass # Replace with function body.
 
-func _on_bubble_body_entered(body: Node3D) -> void:
+func _on_bubble_body_entered(body) -> void:
 	if(not body.is_in_group("player")):
+		if(body.is_in_group("enemy")):
+			body.death()
 		await get_tree().process_frame
 		print(body)
 		fall()
