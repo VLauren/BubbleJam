@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsgjs18b0v7vg"]
+[gd_scene load_steps=6 format=3 uid="uid://bsgjs18b0v7vg"]
 
 [ext_resource type="PackedScene" uid="uid://mev7r26i6pax" path="res://Scenes/character.tscn" id="1_ifjge"]
 [ext_resource type="PackedScene" uid="uid://bs7sai2tuoww0" path="res://Scenes/camera.tscn" id="1_mkntk"]
 [ext_resource type="PackedScene" uid="uid://b5xegt20ea1kd" path="res://Scenes/trigger_level_end.tscn" id="3_psj7a"]
+[ext_resource type="PackedScene" uid="uid://c42ay18worcta" path="res://Scenes/kill_trigger.tscn" id="4_kvs8f"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_32dj5"]
 shading_mode = 0
@@ -34,3 +35,6 @@ size = Vector3(5.41046, 1.92818, 2.99512)
 
 [node name="TriggerLevelEnd" parent="." instance=ExtResource("3_psj7a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5336, -0.00972617, -0.119494)
+
+[node name="KillTrigger" parent="." instance=ExtResource("4_kvs8f")]
+transform = Transform3D(1.71816, 0, 0, 0, 4.66116, 0, 0, 0, 3.65937, -3.65935, 1.00875, -0.716201)

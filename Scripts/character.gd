@@ -89,3 +89,6 @@ func _on_bubble_area_shape_entered(area_rid: RID, area: Area3D, area_shape_index
 func _on_bubble_body_entered(body: Node3D) -> void:
 	fall()
 	pass # Replace with function body.
+
+func death():
+	get_tree().reload_current_scene()
