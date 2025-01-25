@@ -18,10 +18,17 @@ var input_dir : Vector2
 
 var lastAnimationName = ""
 
+var dead = false
+
+
 func _ready() -> void:
 	$CharacterBase/AnimationPlayer.play("Idle 1")
 
+
 func _process(delta: float) -> void:
+	if(dead):
+		return
+		
 	$Bubble.scale = Vector3.ONE * move_toward($Bubble.scale.x, target_bubble_size, 0.1)
 	if(target_bubble_size == 0):
 		$Bubble.scale = Vector3.ZERO
@@ -41,7 +48,11 @@ func _process(delta: float) -> void:
 		else:
 			changeAnimation("Idle 1")
 
+
 func _physics_process(delta: float) -> void:
+	if(dead):
+		return
+		
 	# gravedad
 	if not is_on_floor():
 		if jump_count > 1: 
@@ -62,7 +73,7 @@ func _physics_process(delta: float) -> void:
 	elif jump_count == 1:
 		target_bubble_size -= 1
 	if(cant_jump):
-		target_bubble_size = 0
+		bubbleSizeZero()
 		
 	# saltitos
 	if Input.is_action_just_pressed("ui_accept") and not cant_jump:
@@ -113,7 +124,14 @@ func _physics_process(delta: float) -> void:
 	
 	if(position.y < -10):
 		death()
+
+
+func bubbleSizeZero():
+	await get_tree().create_timer(0.2).timeout
+	target_bubble_size = 0
 	
+	
+
 func fall():
 	cant_jump = true
 	if(velocity.y > -0.5):
@@ -121,8 +139,10 @@ func fall():
 	cant_jump = true
 	changeAnimation("JumpCortado")
 
+
 func _on_bubble_area_shape_entered(area_rid: RID, area: Area3D, area_shape_index: int, local_shape_index: int) -> void:
 	pass # Replace with function body.
+
 
 func _on_bubble_body_entered(body) -> void:
 	if(not body.is_in_group("player")):
@@ -132,9 +152,19 @@ func _on_bubble_body_entered(body) -> void:
 		print(body)
 		fall()
 
+
 func death():
+	dead = true
+	$CharacterBase.visible = false
+	$Bubble.visible = false
+	
+	# VFX, SFX
+	
+	await get_tree().create_timer(3).timeout
+	
 	get_tree().reload_current_scene()
 	
+
 func changeAnimation(animationName, transitionTime = 0.1):
 	# if(animationName != $CharacterBase/AnimationPlayer.current_animation):
 	if(animationName != lastAnimationName):
