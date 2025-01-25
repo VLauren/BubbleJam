@@ -1,15 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://mev7r26i6pax"]
+[gd_scene load_steps=7 format=3 uid="uid://mev7r26i6pax"]
 
 [ext_resource type="Script" path="res://Scripts/character.gd" id="1_kpfip"]
 [ext_resource type="Material" uid="uid://muj32bhsg267" path="res://Materials/bubble.tres" id="2_6gt05"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_qwvwv"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xj7n5"]
-shading_mode = 0
-albedo_color = Color(0.69, 0.52095, 0.207, 1)
+[ext_resource type="PackedScene" uid="uid://dgh52nd0qerh2" path="res://Meshes/Character.tscn" id="3_xodh6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y6n54"]
+size = Vector3(0.616638, 1.48453, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_utaet"]
 
@@ -18,11 +14,11 @@ albedo_color = Color(0.69, 0.52095, 0.207, 1)
 [node name="Character" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_kpfip")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_qwvwv")
-surface_material_override/0 = SubResource("StandardMaterial3D_xj7n5")
+[node name="CharacterBase" parent="." instance=ExtResource("3_xodh6")]
+transform = Transform3D(0.0329203, 0, 0.298188, 0, 0.3, 0, -0.298188, 0, 0.0329203, 0, -1.31285, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0714417, -0.0345739, 0)
 shape = SubResource("BoxShape3D_y6n54")
 
 [node name="Bubble" type="Area3D" parent="."]

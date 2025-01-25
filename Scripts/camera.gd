@@ -16,16 +16,33 @@ func _process(delta: float) -> void:
 	# print(str(player.position) + " " + str(position))
 	var target = player.position
 	
-	if(not player.is_on_floor() and ((position.y - offset.y) - target.y) < -0.5):
-		target.y = position.y - offset.y
+	# print(((position.y - offset.y) - target.y))
+	var lockY = false
+	if(not player.is_on_floor()):
+		lockY = true
+		# if (((position.y - offset.y) - target.y) < -0.5) and ((position.y - offset.y) - target.y) > -8:
+		# print(abs(position.y - target.y))
+		if(abs(position.y - target.y) > 4):
+			lockY = false
+			
+	# if(lockY):
+		# target.y = position.y - offset.y
+			
 	if player.velocity.x > 0:
 		direction = 1
 	if player.velocity.x < 0:
 		direction = -1
-	
 	target.x += direction * 2.5
 		
-	position = lerp(position, target + offset, smooth_factor * delta)
+	# position = lerp(position, target + offset, smooth_factor * delta)
+	position.x = lerp(position.x, target.x + offset.x, smooth_factor * delta)
+	if(not lockY):
+		if(position.y > target.y):
+			position.y = lerp(position.y, target.y + offset.y, smooth_factor * delta)
+			# position.y = move_toward(position.y, target.y + offset.y, 0.1)
+		else:
+			position.y = lerp(position.y, target.y + offset.y, smooth_factor * 0.1 * delta)
+			# position.y = move_toward(position.y, target.y + offset.y, 0.01)
 	
 	if(position.x < minPos.x):
 		position.x = minPos.x

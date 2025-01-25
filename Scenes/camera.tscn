@@ -6,6 +6,6 @@
 fov = 20.0
 script = ExtResource("1_rjwtv")
 offset = Vector3(0, 2, 40)
-smooth_factor = 2.0
+smooth_factor = 3.0
 minPos = Vector2(5, 2)
 maxPos = Vector2(1000, 1000)

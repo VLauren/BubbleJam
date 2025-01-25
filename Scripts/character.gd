@@ -22,6 +22,14 @@ func _process(delta: float) -> void:
 	$Bubble.scale = Vector3.ONE * move_toward($Bubble.scale.x, target_bubble_size, 0.1)
 	if(target_bubble_size == 0):
 		$Bubble.scale = Vector3.ZERO
+	
+	var rot : float
+	rot = $CharacterBase.rotation.y
+	if(velocity.x > 0):
+		rot = rotate_toward($CharacterBase.rotation.y, 90, delta * 10)
+	if(velocity.x < 0):
+		rot = rotate_toward($CharacterBase.rotation.y, -70, delta * 10)
+	$CharacterBase.rotation.y = rot
 
 func _physics_process(delta: float) -> void:
 	# gravedad
@@ -41,18 +49,25 @@ func _physics_process(delta: float) -> void:
 	target_bubble_size = jump_count * 1.0
 	if(jump_count > 1):
 		target_bubble_size += 0.5
-	else:
-		target_bubble_size -+ 1
+	elif jump_count == 1:
+		target_bubble_size -= 1
 	if(cant_jump):
 		target_bubble_size = 0
 		
 	# saltitos
 	if Input.is_action_just_pressed("ui_accept") :
 		if jump_count == 0:
-			velocity.y = jump_vel_1
-			jump_count += 1
+			if(is_on_floor()):
+				velocity.y = jump_vel_1
+				jump_count += 1
+				print("jump A")
+			else:
+				velocity.y = jump_vel_2
+				print("jump B")
+				jump_count += 2
 		elif jump_count > 0 and jump_count < max_jumps:
 			velocity.y = jump_vel_2
+			print("jump B")
 			jump_count += 1
 			speed = speed_2
 		elif jump_count >= max_jumps:
@@ -97,9 +112,10 @@ func _on_bubble_area_shape_entered(area_rid: RID, area: Area3D, area_shape_index
 	pass # Replace with function body.
 
 func _on_bubble_body_entered(body: Node3D) -> void:
-	await get_tree().process_frame
-	fall()
-	pass # Replace with function body.
+	if(not body.is_in_group("player")):
+		await get_tree().process_frame
+		print(body)
+		fall()
 
 func death():
 	get_tree().reload_current_scene()
