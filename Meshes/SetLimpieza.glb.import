@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dktrtn1sh6rdn"
-path="res://.godot/imported/SetLimpieza.glb-d4c87de8c74f4f6ecc752755f86fd15a.scn"
+uid="uid://cvs7kluj7cm8c"
+path="res://.godot/imported/SetLimpieza.glb-c35ef634f699b3f3ea3bdd405e7f01ad.scn"
 
 [deps]
 
-source_file="res://Meshes/Escenario/SetLimpieza.glb"
-dest_files=["res://.godot/imported/SetLimpieza.glb-d4c87de8c74f4f6ecc752755f86fd15a.scn"]
+source_file="res://Meshes/SetLimpieza.glb"
+dest_files=["res://.godot/imported/SetLimpieza.glb-c35ef634f699b3f3ea3bdd405e7f01ad.scn"]
 
 [params]
 

@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://chnd8tgfhoiwa" path="res://Meshes/Prefabs/caja_wtc.tscn" id="8_fbx4e"]
 [ext_resource type="PackedScene" uid="uid://dtutmtesa5ebd" path="res://Meshes/Escenario/Vigas.glb" id="9_54l2v"]
 [ext_resource type="PackedScene" uid="uid://b3swmces4rcbq" path="res://Meshes/Prefabs/edificio_1_wtc.tscn" id="9_ykrvq"]
-[ext_resource type="PackedScene" uid="uid://dktrtn1sh6rdn" path="res://Meshes/Escenario/SetLimpieza.glb" id="10_3rhym"]
+[ext_resource type="PackedScene" uid="uid://cvs7kluj7cm8c" path="res://Meshes/SetLimpieza.glb" id="11_3v22e"]
 [ext_resource type="PackedScene" uid="uid://bc0i2w7ptnyh8" path="res://Meshes/BasuraBolsa.glb" id="11_bh84n"]
 
 [node name="Node3D" type="Node3D"]
@@ -104,11 +104,11 @@ transform = Transform3D(0.318025, 0, 0, 0, 0.318025, 0, 0, 0, 0.318025, -3.88663
 [node name="CajaWtc2" parent="." instance=ExtResource("8_fbx4e")]
 transform = Transform3D(0.166611, 0, 0, 0, 0.166611, 0, 0, 0, 0.166611, -5.07655, 42.6232, -10.0547)
 
-[node name="SetLimpieza2" parent="." instance=ExtResource("10_3rhym")]
-transform = Transform3D(0.427122, 0, 0.25898, 0, 0.594927, 0, -0.25898, 0, 0.427122, -1.48449, 42.7132, -8.20095)
-
 [node name="BasuraBolsa2" parent="." instance=ExtResource("11_bh84n")]
 transform = Transform3D(0.856718, 0, 0.515786, 0, 1, 0, -0.515786, 0, 0.856718, 16.3378, -1.05704, -5.60315)
 
 [node name="BasuraBolsa3" parent="." instance=ExtResource("11_bh84n")]
 transform = Transform3D(-0.842189, 0, 0.539182, 0, 1, 0, -0.539182, 0, -0.842189, -3.42053, -1.09784, -5.60315)
+
+[node name="SetLimpieza2" parent="." instance=ExtResource("11_3v22e")]
+transform = Transform3D(0.677641, 0, 0.215208, 0, 0.710993, 0, -0.215208, 0, 0.677641, -2.03467, 42.5486, -6.74593)
