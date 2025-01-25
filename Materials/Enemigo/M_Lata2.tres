@@ -4,4 +4,4 @@
 resource_name = "M_Lata2"
 shading_mode = 0
 vertex_color_use_as_albedo = true
-albedo_color = Color(0, 0.84, 0.028, 1)
+albedo_color = Color(0.588235, 0.678431, 0.4, 1)

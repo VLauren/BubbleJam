@@ -4,4 +4,4 @@
 resource_name = "M_VerdeBolsa"
 shading_mode = 0
 vertex_color_use_as_albedo = true
-albedo_color = Color(0, 0.32, 0.0693333, 1)
+albedo_color = Color(0.189053, 0.44, 0.1848, 1)

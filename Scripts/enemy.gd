@@ -18,13 +18,16 @@ var count = 0
 
 var canShoot = false
 
+var lastAnimationName = ""
+
 func _ready() -> void:
 	direction = Vector2(1, 0)
 	previousPosition = position
 	player = get_tree().get_nodes_in_group("player")[0]
-	# player = get_parent().get_tree().get_nodes_in_group("player")[0]
-	# print(get_parent().get_parent())
+	changeAnimation("enemy_idle")
+	
 	await get_tree().create_timer(3).timeout
+	
 	canShoot = true
 	
 func _process(delta: float) -> void:
@@ -32,9 +35,9 @@ func _process(delta: float) -> void:
 	var rot : float
 	rot = $EnemyRubish.rotation.y
 	if(velocity.x > 0):
-		rot = rotate_toward($EnemyRubish.rotation.y, PI/2+0.01, delta * 10)
+		rot = rotate_toward($EnemyRubish.rotation.y, PI/2+0.01, delta * 6)
 	if(velocity.x < 0):
-		rot = rotate_toward($EnemyRubish.rotation.y, -PI/2-0.01, delta * 10)
+		rot = rotate_toward($EnemyRubish.rotation.y, -PI/2-0.01, delta * 6)
 	$EnemyRubish.rotation.y = rot
 		
 	if(state == MOVING):
@@ -79,7 +82,7 @@ func change_direction():
 
 func shoot():
 	canShoot = false
-	# shoot animation
+	changeAnimation("enemy_fire")
 	await get_tree().create_timer(1).timeout
 	
 	# spawn projectil
@@ -99,3 +102,9 @@ func shoot():
 func death():
 	print("enemy death")
 	queue_free()
+	
+func changeAnimation(animationName, transitionTime = 0.1):
+	if(animationName != lastAnimationName):
+		print(animationName)
+		lastAnimationName = animationName
+		$EnemyRubish/AnimationPlayer.play(animationName, transitionTime, 1)

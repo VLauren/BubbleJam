@@ -5,16 +5,16 @@
 [ext_resource type="PackedScene" uid="uid://uk31leewjtbq" path="res://Meshes/Prefabs/EnemyRubishScene.tscn" id="3_l56c2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_aw2np"]
-radius = 0.398604
-height = 1.49982
+radius = 0.687802
+height = 2.49884
 
 [node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
 script = ExtResource("1_ace5i")
 ProjectileScene = ExtResource("2_u2f30")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0284334, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0908142, 0.40674, -0.0348823)
 shape = SubResource("CapsuleShape3D_aw2np")
 
 [node name="EnemyRubish" parent="." instance=ExtResource("3_l56c2")]
-transform = Transform3D(0.12941, 0, 0.482963, 0, 0.5, 0, -0.482963, 0, 0.12941, -0.0986556, -0.707309, 0)
+transform = Transform3D(0.207056, 0, 0.772741, 0, 0.8, 0, -0.772741, 0, 0.207056, -0.0986556, -0.758053, 0)
