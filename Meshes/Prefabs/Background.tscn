@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbvix4dbgws4l"]
+
+[ext_resource type="PackedScene" uid="uid://bhmv1h2gx0vhp" path="res://Meshes/Escenario/plano_sombreador.tscn" id="1_gs4m8"]
+
+[node name="Background" type="Node3D"]
+
+[node name="PlanoSombreador" parent="." instance=ExtResource("1_gs4m8")]
+transform = Transform3D(703.118, 0, 0, 0, 320.137, 0, 0, 0, 1, -0.235597, 81.9936, -31.9178)
+
+[node name="PlanoSombreador3" parent="." instance=ExtResource("1_gs4m8")]
+transform = Transform3D(703.118, 0, 0, 0, 320.137, 0, 0, 0, 1, -0.235597, 81.9936, -196.032)
+
+[node name="PlanoSombreador4" parent="." instance=ExtResource("1_gs4m8")]
+transform = Transform3D(703.118, 0, 0, 0, 320.137, 0, 0, 0, 1, -0.235597, 81.9936, -287.101)
+
+[node name="PlanoSombreador2" parent="." instance=ExtResource("1_gs4m8")]
+transform = Transform3D(686.716, 0, 0, 0, 320.137, 0, 0, 0, 1, -0.235597, 81.9936, -100.118)

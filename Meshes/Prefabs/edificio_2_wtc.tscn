@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://c46sccr4mwx1i"]
+
+[ext_resource type="PackedScene" uid="uid://rdm6x1lknxug" path="res://Meshes/Escenario/Edificio2.glb" id="1_ob6vb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6rt2d"]
+shading_mode = 0
+albedo_color = Color(0.374816, 0.556871, 0.248993, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sheo3"]
+shading_mode = 0
+albedo_color = Color(0.374816, 0.556871, 0.248993, 1)
+
+[node name="Edificio2wtc" instance=ExtResource("1_ob6vb")]
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="." index="1"]
+transform = Transform3D(-1.84613e-09, 0, 8.9819, -0.0422346, -1.91188e-07, -3.92611e-07, 1.84613e-09, -4.37387, 1.71616e-14, 0.106287, 52.1005, -9.70569)
+visible = false
+use_collision = true
+size = Vector3(21.9841, 6.42944, 3.55029)
+material = SubResource("StandardMaterial3D_6rt2d")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="." index="2"]
+transform = Transform3D(-1.84613e-09, 0, 8.9819, -0.0422346, -1.91188e-07, -3.92611e-07, 1.84613e-09, -4.37387, 1.71616e-14, 0.106287, 0.536373, -9.70569)
+visible = false
+use_collision = true
+size = Vector3(21.9841, 6.42944, 3.55029)
+material = SubResource("StandardMaterial3D_6rt2d")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="." index="3"]
+transform = Transform3D(0.0654742, 0, 0, 0, 8.33684, 0, 0, 0, 7.93916, 15.5346, 26.3811, -9.69343)
+visible = false
+use_collision = true
+size = Vector3(21.9841, 6.42944, 3.55029)
+material = SubResource("StandardMaterial3D_sheo3")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="." index="4"]
+transform = Transform3D(0.0654742, 0, 0, 0, 8.33684, 0, 0, 0, 7.93916, -15.1532, 26.3811, -9.69343)
+visible = false
+use_collision = true
+size = Vector3(21.9841, 6.42944, 3.55029)
+material = SubResource("StandardMaterial3D_sheo3")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="." index="5"]
+transform = Transform3D(-2.86197e-09, 0, -9.05272, 0, 8.33684, 0, 0.0654742, 0, -3.95707e-07, 0.0863266, 26.3811, -23.0541)
+visible = false
+use_collision = true
+size = Vector3(21.9841, 6.42944, 3.55029)
+material = SubResource("StandardMaterial3D_sheo3")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="." index="6"]
+transform = Transform3D(-2.86197e-09, 0, -9.05272, 0, 8.33684, 0, 0.0654742, 0, -3.95707e-07, 0.0863266, 26.3811, 3.66723)
+visible = false
+use_collision = true
+size = Vector3(21.9841, 6.42944, 3.55029)
+material = SubResource("StandardMaterial3D_sheo3")
