@@ -34,17 +34,17 @@ import_script/path=""
 _subresources={
 "animations": {
 "mixamo_com": {
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/keep_custom_tracks": true,
 "save_to_file/path": "res://Animations/Jump 2.res",
 "settings/loop_mode": 0,
-"slice_1/end_frame": 0,
+"slice_1/end_frame": 25,
 "slice_1/loop_mode": 0,
 "slice_1/name": "",
-"slice_1/save_to_file/enabled": false,
+"slice_1/save_to_file/enabled": true,
 "slice_1/save_to_file/keep_custom_tracks": false,
-"slice_1/save_to_file/path": "",
-"slice_1/start_frame": 0,
+"slice_1/save_to_file/path": "res://Animations/JumpCortado.res",
+"slice_1/start_frame": 16,
 "slice_10/end_frame": 0,
 "slice_10/loop_mode": 0,
 "slice_10/name": "",
@@ -1830,7 +1830,7 @@ _subresources={
 "slice_99/save_to_file/keep_custom_tracks": false,
 "slice_99/save_to_file/path": "",
 "slice_99/start_frame": 0,
-"slices/amount": 0
+"slices/amount": 1
 }
 },
 "nodes": {

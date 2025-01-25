@@ -11,14 +11,12 @@ var jump_vel_1 = 9
 var jump_vel_2 = 5
 var gravity_1 = 20
 var gravity_2 = 4
-
 var jump_count = 0
-
 var cant_jump = false
-
 var target_bubble_size = 0
-
 var input_dir : Vector2
+
+var lastAnimationName = ""
 
 func _ready() -> void:
 	$CharacterBase/AnimationPlayer.play("Idle 1")
@@ -37,16 +35,16 @@ func _process(delta: float) -> void:
 	$CharacterBase.rotation.y = rot
 	
 	#animaciones
-	if(input_dir.x != 0):
-		$CharacterBase/AnimationPlayer.play("Standard Run", 1, 1)
-	else:
-		$CharacterBase/AnimationPlayer.play("Idle 1", 1, 1)
+	if(is_on_floor()):
+		if(input_dir.x != 0):
+			changeAnimation("Standard Run")
+		else:
+			changeAnimation("Idle 1")
 
 func _physics_process(delta: float) -> void:
 	# gravedad
 	if not is_on_floor():
 		if jump_count > 1: 
-			# Add the gravity.
 			velocity += Vector3(0, -gravity_2, 0) * delta
 		else:
 			velocity += Vector3(0, -gravity_1, 0) * delta
@@ -55,6 +53,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		jump_count = 0
 		speed = speed_1
+		cant_jump = false
 	
 	# tamaño de la pompa
 	target_bubble_size = jump_count * 1.0
@@ -66,18 +65,21 @@ func _physics_process(delta: float) -> void:
 		target_bubble_size = 0
 		
 	# saltitos
-	if Input.is_action_just_pressed("ui_accept") :
+	if Input.is_action_just_pressed("ui_accept") and not cant_jump:
 		if jump_count == 0:
 			if(is_on_floor()):
 				velocity.y = jump_vel_1
 				jump_count += 1
+				changeAnimation("JumpCortado")
 			else:
 				velocity.y = jump_vel_2
 				jump_count += 2
+				changeAnimation("Floating")
 		elif jump_count > 0 and jump_count < max_jumps:
 			velocity.y = jump_vel_2
 			jump_count += 1
 			speed = speed_2
+			changeAnimation("Floating", 0.5)
 		elif jump_count >= max_jumps:
 			fall()
 		
@@ -115,6 +117,8 @@ func fall():
 	cant_jump = true
 	if(velocity.y > -0.5):
 		velocity.y = -0.5
+	cant_jump = true
+	changeAnimation("JumpCortado")
 
 func _on_bubble_area_shape_entered(area_rid: RID, area: Area3D, area_shape_index: int, local_shape_index: int) -> void:
 	pass # Replace with function body.
@@ -127,3 +131,10 @@ func _on_bubble_body_entered(body: Node3D) -> void:
 
 func death():
 	get_tree().reload_current_scene()
+	
+func changeAnimation(animationName, transitionTime = 0.1):
+	# if(animationName != $CharacterBase/AnimationPlayer.current_animation):
+	if(animationName != lastAnimationName):
+		print(animationName)
+		lastAnimationName = animationName
+		$CharacterBase/AnimationPlayer.play(animationName, transitionTime, 1)

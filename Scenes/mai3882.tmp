@@ -20,7 +20,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0714417, -0.0345739, 0)
 shape = SubResource("BoxShape3D_y6n54")
 
 [node name="Bubble" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0102339, 0.939915, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bubble"]
 shape = SubResource("SphereShape3D_utaet")
