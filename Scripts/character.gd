@@ -18,6 +18,11 @@ var cant_jump = false
 
 var target_bubble_size = 0
 
+var input_dir : Vector2
+
+func _ready() -> void:
+	$CharacterBase/AnimationPlayer.play("Idle 1")
+
 func _process(delta: float) -> void:
 	$Bubble.scale = Vector3.ONE * move_toward($Bubble.scale.x, target_bubble_size, 0.1)
 	if(target_bubble_size == 0):
@@ -28,8 +33,14 @@ func _process(delta: float) -> void:
 	if(velocity.x > 0):
 		rot = rotate_toward($CharacterBase.rotation.y, 90, delta * 10)
 	if(velocity.x < 0):
-		rot = rotate_toward($CharacterBase.rotation.y, -70, delta * 10)
+		rot = rotate_toward($CharacterBase.rotation.y, -89, delta * 10)
 	$CharacterBase.rotation.y = rot
+	
+	#animaciones
+	if(input_dir.x != 0):
+		$CharacterBase/AnimationPlayer.play("Standard Run", 1, 1)
+	else:
+		$CharacterBase/AnimationPlayer.play("Idle 1", 1, 1)
 
 func _physics_process(delta: float) -> void:
 	# gravedad
@@ -60,14 +71,11 @@ func _physics_process(delta: float) -> void:
 			if(is_on_floor()):
 				velocity.y = jump_vel_1
 				jump_count += 1
-				print("jump A")
 			else:
 				velocity.y = jump_vel_2
-				print("jump B")
 				jump_count += 2
 		elif jump_count > 0 and jump_count < max_jumps:
 			velocity.y = jump_vel_2
-			print("jump B")
 			jump_count += 1
 			speed = speed_2
 		elif jump_count >= max_jumps:
@@ -80,7 +88,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = -4
 
 	# input derecha-izquierda
-	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, 0)).normalized()
 	if direction:
 		velocity.x = move_toward(velocity.x, direction.x * speed, 1)
