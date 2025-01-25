@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://mev7r26i6pax"]
+[gd_scene load_steps=8 format=3 uid="uid://mev7r26i6pax"]
 
 [ext_resource type="Script" path="res://Scenes/character.gd" id="1_kpfip"]
 
@@ -10,6 +10,16 @@ albedo_color = Color(0.69, 0.52095, 0.207, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y6n54"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_utaet"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ncvv"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5251, 0.628488, 0.89, 0.215686)
+
+[sub_resource type="SphereMesh" id="SphereMesh_m1dyf"]
+material = SubResource("StandardMaterial3D_2ncvv")
+
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_kpfip")
 
@@ -19,3 +29,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_xj7n5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_y6n54")
+
+[node name="Bubble" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bubble"]
+shape = SubResource("SphereShape3D_utaet")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Bubble"]
+mesh = SubResource("SphereMesh_m1dyf")
+skeleton = NodePath("../../BurbujaTest")

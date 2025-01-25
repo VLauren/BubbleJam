@@ -14,8 +14,14 @@ var jump_count = 0
 
 var cant_jump = false
 
+var target_bubble_size = 0
+
+func _process(delta: float) -> void:
+	$Bubble.scale = Vector3.ONE * move_toward($Bubble.scale.x, target_bubble_size, 0.1)
+	if(target_bubble_size == 0):
+		$Bubble.scale = Vector3.ZERO
+
 func _physics_process(delta: float) -> void:
-	
 	# gravedad
 	if not is_on_floor():
 		if jump_count > 1: 
@@ -28,7 +34,13 @@ func _physics_process(delta: float) -> void:
 	else:
 		jump_count = 0
 		speed = speed_1
-
+	
+	# tamaño de la pompa
+	target_bubble_size = jump_count * 1.0
+	if(jump_count > 0):
+		target_bubble_size += 0.5
+	if(cant_jump):
+		target_bubble_size = 0
 		
 	# saltitos
 	if Input.is_action_just_pressed("ui_accept") :
@@ -65,3 +77,4 @@ func _physics_process(delta: float) -> void:
 	
 func fall():
 	velocity.y = -4
+	cant_jump = true
