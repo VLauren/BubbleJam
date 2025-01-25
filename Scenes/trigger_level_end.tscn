@@ -1,15 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5xegt20ea1kd"]
+[gd_scene load_steps=4 format=3 uid="uid://b5xegt20ea1kd"]
 
 [ext_resource type="Script" path="res://Scripts/trigger_level_end.gd" id="1_6pi5i"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e2ym5"]
 size = Vector3(2.36971, 2.65277, 3.13693)
 
+[sub_resource type="PrismMesh" id="PrismMesh_ek34u"]
+
 [node name="TriggerLevelEnd" type="Area3D"]
 script = ExtResource("1_6pi5i")
+level = "res://Scenes/levels/level01.tscn"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0683153, 0.826385, 0.0727997)
 shape = SubResource("BoxShape3D_e2ym5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 2.49611, 0)
+mesh = SubResource("PrismMesh_ek34u")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,11 +1,13 @@
 extends CharacterBody3D
 
+@export var xLimit = Vector2(-5, 1000)
+
 const max_jumps = 5
 
 var speed = 5.0
 var speed_1 = 5.0
 var speed_2 = 3.5
-var jump_vel_1 = 8
+var jump_vel_1 = 9
 var jump_vel_2 = 5
 var gravity_1 = 20
 var gravity_2 = 4
@@ -78,6 +80,14 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
+	if(position.x < xLimit.x):
+		position.x = xLimit.x
+	if(position.x > xLimit.y):
+		position.x = xLimit.y
+	
+	if(position.y < -10):
+		death()
+	
 func fall():
 	cant_jump = true
 	if(velocity.y > -0.5):
@@ -87,6 +97,7 @@ func _on_bubble_area_shape_entered(area_rid: RID, area: Area3D, area_shape_index
 	pass # Replace with function body.
 
 func _on_bubble_body_entered(body: Node3D) -> void:
+	await get_tree().process_frame
 	fall()
 	pass # Replace with function body.
 

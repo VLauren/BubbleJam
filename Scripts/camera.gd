@@ -26,3 +26,13 @@ func _process(delta: float) -> void:
 	target.x += direction * 2.5
 		
 	position = lerp(position, target + offset, smooth_factor * delta)
+	
+	if(position.x < minPos.x):
+		position.x = minPos.x
+	if(position.y < minPos.y):
+		position.y = minPos.y
+	if(position.x > maxPos.x):
+		position.x = maxPos.x
+	if(position.y > maxPos.y):
+		position.y = maxPos.y
+		

@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfs2ohkpc8gji"]
+
+[ext_resource type="PackedScene" uid="uid://bs7sai2tuoww0" path="res://Scenes/camera.tscn" id="1_0ovle"]
+[ext_resource type="PackedScene" uid="uid://mev7r26i6pax" path="res://Scenes/character.tscn" id="2_2vo1u"]
+[ext_resource type="PackedScene" uid="uid://b5xegt20ea1kd" path="res://Scenes/trigger_level_end.tscn" id="3_8t0gf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_32dj5"]
+shading_mode = 0
+albedo_color = Color(0.374816, 0.556871, 0.248993, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera" parent="." instance=ExtResource("1_0ovle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75051, 2.53023, 40.3495)
+
+[node name="Character" parent="." instance=ExtResource("2_2vo1u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.878, 0.0413287, 0.00273819)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.12835, -6.82556, -0.233667)
+use_collision = true
+size = Vector3(22.5721, 12.0688, 3.55029)
+material = SubResource("StandardMaterial3D_32dj5")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.3618, -6.82556, -0.233667)
+use_collision = true
+size = Vector3(22.5721, 12.0688, 3.55029)
+material = SubResource("StandardMaterial3D_32dj5")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.20469, -0.253529, -0.447268)
+use_collision = true
+size = Vector3(5.41046, 1.92818, 2.99512)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.4521, 1.92156, -0.447268)
+use_collision = true
+size = Vector3(5.41046, 1.92818, 2.99512)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.5488, 4.38437, -0.876991)
+use_collision = true
+size = Vector3(5.41046, 1.92818, 2.99512)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.8507, 4.38437, -0.876991)
+use_collision = true
+size = Vector3(10.1985, 1.92818, 2.99512)
+
+[node name="TriggerLevelEnd" parent="." instance=ExtResource("3_8t0gf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.4332, -0.79116, -0.151373)
+level = "res://Scenes/levels/level02.tscn"
