@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bsgjs18b0v7vg"]
+[gd_scene load_steps=4 format=3 uid="uid://bsgjs18b0v7vg"]
 
 [ext_resource type="PackedScene" uid="uid://mev7r26i6pax" path="res://Scenes/character.tscn" id="1_ifjge"]
+[ext_resource type="PackedScene" uid="uid://bs7sai2tuoww0" path="res://Scenes/camera.tscn" id="1_mkntk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_32dj5"]
 shading_mode = 0
@@ -8,9 +9,9 @@ albedo_color = Color(0.374816, 0.556871, 0.248993, 1)
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera" parent="." instance=ExtResource("1_mkntk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.752, 2.561, 40.321)
-fov = 20.0
+offset = Vector3(0, 2, 40)
 
 [node name="Character" parent="." instance=ExtResource("1_ifjge")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.878, 0.0413287, 0.00273819)

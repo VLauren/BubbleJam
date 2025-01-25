@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs7sai2tuoww0"]
+
+[ext_resource type="Script" path="res://Scripts/camera.gd" id="1_rjwtv"]
+
+[node name="Camera" type="Camera3D"]
+fov = 20.0
+script = ExtResource("1_rjwtv")
+smooth_factor = 1.0

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://mev7r26i6pax"]
 
-[ext_resource type="Script" path="res://Scenes/character.gd" id="1_kpfip"]
+[ext_resource type="Script" path="res://Scripts/character.gd" id="1_kpfip"]
 [ext_resource type="Material" uid="uid://muj32bhsg267" path="res://Materials/bubble.tres" id="2_6gt05"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_qwvwv"]
@@ -15,7 +15,7 @@ albedo_color = Color(0.69, 0.52095, 0.207, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_7vhgi"]
 
-[node name="Character" type="CharacterBody3D"]
+[node name="Character" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_kpfip")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

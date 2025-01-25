@@ -37,8 +37,10 @@ func _physics_process(delta: float) -> void:
 	
 	# tamaño de la pompa
 	target_bubble_size = jump_count * 1.0
-	if(jump_count > 0):
+	if(jump_count > 1):
 		target_bubble_size += 0.5
+	else:
+		target_bubble_size -+ 1
 	if(cant_jump):
 		target_bubble_size = 0
 		
@@ -78,8 +80,8 @@ func _physics_process(delta: float) -> void:
 	
 func fall():
 	cant_jump = true
-	if(velocity.y > 0):
-		velocity.y = 0
+	if(velocity.y > -0.5):
+		velocity.y = -0.5
 
 func _on_bubble_area_shape_entered(area_rid: RID, area: Area3D, area_shape_index: int, local_shape_index: int) -> void:
 	pass # Replace with function body.
