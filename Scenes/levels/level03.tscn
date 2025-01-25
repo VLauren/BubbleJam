@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://rh4qft7sotor"]
 
 [ext_resource type="PackedScene" uid="uid://bs7sai2tuoww0" path="res://Scenes/camera.tscn" id="1_whuoq"]
-[ext_resource type="PackedScene" uid="uid://mev7r26i6pax" path="res://Scenes/character.tscn" id="2_of881"]
+[ext_resource type="PackedScene" uid="uid://7wl1lrith1tu" path="res://Scenes/mainChar.tscn" id="3_8wv54"]
 [ext_resource type="PackedScene" uid="uid://b5xegt20ea1kd" path="res://Scenes/trigger_level_end.tscn" id="3_33rye"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_32dj5"]
@@ -12,9 +12,6 @@ albedo_color = Color(0.374816, 0.556871, 0.248993, 1)
 
 [node name="Camera" parent="." instance=ExtResource("1_whuoq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75051, 2.53023, 40.3495)
-
-[node name="Character" parent="." instance=ExtResource("2_of881")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.57231, 0.0413287, 0.00273819)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1.46464, 0, 0, 0, 1, 0, 0, 0, 1, 6.17431, -4.00586, -0.233667)
@@ -44,3 +41,6 @@ size = Vector3(11.9626, 23.7383, 2.99512)
 
 [node name="TriggerLevelEnd" parent="." instance=ExtResource("3_33rye")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.05287, 36.8422, -0.411594)
+
+[node name="MainCharacter" parent="." instance=ExtResource("3_8wv54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.38418, -0.485103, -0.334252)

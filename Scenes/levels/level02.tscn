@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b1u1w1koo38sv"]
 
 [ext_resource type="PackedScene" uid="uid://bs7sai2tuoww0" path="res://Scenes/camera.tscn" id="1_x0vmv"]
-[ext_resource type="PackedScene" uid="uid://mev7r26i6pax" path="res://Scenes/character.tscn" id="2_l3qml"]
+[ext_resource type="PackedScene" uid="uid://7wl1lrith1tu" path="res://Scenes/mainChar.tscn" id="3_7qpj1"]
 [ext_resource type="PackedScene" uid="uid://b5xegt20ea1kd" path="res://Scenes/trigger_level_end.tscn" id="3_dqt7t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_32dj5"]
@@ -13,9 +13,6 @@ albedo_color = Color(0.374816, 0.556871, 0.248993, 1)
 [node name="Camera" parent="." instance=ExtResource("1_x0vmv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75051, 2.53023, 40.3495)
 maxPos = Vector2(20, 1000)
-
-[node name="Character" parent="." instance=ExtResource("2_l3qml")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.57231, 0.0413287, 0.00273819)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7389, -4.00586, -0.233667)
@@ -66,3 +63,6 @@ size = Vector3(5.41046, 1.92818, 2.99512)
 [node name="TriggerLevelEnd" parent="." instance=ExtResource("3_dqt7t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.03874, 36.8832, -0.349602)
 level = "C:/Users/Laurentino/Documents/GitHub/BubbleJam/Scenes/levels/level03.tscn"
+
+[node name="MainCharacter" parent="." instance=ExtResource("3_7qpj1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.02681, -0.495615, -0.134384)
