@@ -1,0 +1,91 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://m08u5doi81bf"
+path="res://.godot/imported/Character Base.fbx-5bcd2828ff71b1e9162af3c8020b51a7.scn"
+
+[deps]
+
+source_file="res://Meshes/Character Base.fbx"
+dest_files=["res://.godot/imported/Character Base.fbx-5bcd2828ff71b1e9162af3c8020b51a7.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"M_Botas": {
+"use_external/enabled": true,
+"use_external/path": "res://Materials/M_Botas.tres"
+},
+"M_Camisa": {
+"use_external/enabled": true,
+"use_external/path": "res://Materials/M_Camisa.tres"
+},
+"M_CamisaOscuro": {
+"use_external/enabled": true,
+"use_external/path": "res://Materials/M_CamisaOscuro.tres"
+},
+"M_Guantes": {
+"use_external/enabled": true,
+"use_external/path": "res://Materials/M_Guantes.tres"
+},
+"M_GuantesOscuro": {
+"use_external/enabled": true,
+"use_external/path": "res://Materials/M_GuantesOscuro.tres"
+},
+"M_Mono": {
+"use_external/enabled": true,
+"use_external/path": "res://Materials/M_Mono.tres"
+},
+"M_MonoOscuro": {
+"use_external/enabled": true,
+"use_external/path": "res://Materials/M_MonoOscuro.tres"
+},
+"M_Panuelo": {
+"use_external/enabled": true,
+"use_external/path": "res://Materials/M_Panuelo.tres"
+},
+"M_PanueloOscuro": {
+"use_external/enabled": true,
+"use_external/path": "res://Materials/M_PanueloOscuro.tres"
+},
+"M_Piel": {
+"use_external/enabled": true,
+"use_external/path": "res://Materials/M_Piel.tres"
+},
+"M_PielOscuro": {
+"use_external/enabled": true,
+"use_external/path": "res://Materials/M_PielOscuro.tres"
+}
+},
+"nodes": {
+"PATH:Skeleton3D": {
+"rest_pose/external_animation_library": null,
+"retarget/bone_map": Resource("res://Meshes/Skeleton info/Mixamo_Bonemap.tres"),
+"retarget/bone_renamer/unique_node/skeleton_name": "Skeleton"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1

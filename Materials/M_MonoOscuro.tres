@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c23tksrmy88g1"]
+
+[resource]
+resource_name = "M_PielOscuro"
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.132, 0.6, 0.1398, 1)
