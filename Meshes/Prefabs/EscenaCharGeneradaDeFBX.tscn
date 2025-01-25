@@ -1,14 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://dgh52nd0qerh2"]
+[gd_scene load_steps=12 format=3 uid="uid://cvykag5pcp5p2"]
 
-[ext_resource type="PackedScene" uid="uid://m08u5doi81bf" path="res://Meshes/Character Base.fbx" id="1_lj4qy"]
-[ext_resource type="Animation" uid="uid://dbij71owenk8b" path="res://Animations/Idle 1.res" id="2_i583c"]
-[ext_resource type="PackedScene" uid="uid://e42n7b8v2iag" path="res://Meshes/Prefabs/PastillaJabon.tscn" id="2_phpeu"]
-[ext_resource type="Animation" uid="uid://c437mofc4gumh" path="res://Animations/Idle 2.res" id="3_nck3j"]
-[ext_resource type="Animation" uid="uid://ddv426p0j0g26" path="res://Animations/Standard Run.res" id="4_3sfbx"]
-[ext_resource type="Animation" uid="uid://bwh5vs4bec5si" path="res://Animations/Jump 1.res" id="5_qf2ca"]
-[ext_resource type="Animation" uid="uid://d32wsbkihvsxq" path="res://Animations/Jump 2.res" id="6_4b1mn"]
-[ext_resource type="Animation" uid="uid://biyjyut6h3i0t" path="res://Animations/Floating.res" id="7_vabeu"]
-[ext_resource type="Animation" uid="uid://blufq8qmbski6" path="res://Animations/JumpCortado.res" id="9_yuq40"]
+[ext_resource type="PackedScene" uid="uid://m08u5doi81bf" path="res://Meshes/Character Base.fbx" id="1_ntkme"]
+[ext_resource type="PackedScene" uid="uid://e42n7b8v2iag" path="res://Meshes/Prefabs/PastillaJabon.tscn" id="2_h08el"]
+[ext_resource type="Animation" uid="uid://biyjyut6h3i0t" path="res://Animations/Floating.res" id="3_gvrsi"]
+[ext_resource type="Animation" uid="uid://dbij71owenk8b" path="res://Animations/Idle 1.res" id="4_cfnml"]
+[ext_resource type="Animation" uid="uid://c437mofc4gumh" path="res://Animations/Idle 2.res" id="5_h2ogq"]
+[ext_resource type="Animation" uid="uid://bwh5vs4bec5si" path="res://Animations/Jump 1.res" id="6_cldry"]
+[ext_resource type="Animation" uid="uid://d32wsbkihvsxq" path="res://Animations/Jump 2.res" id="7_ed15w"]
+[ext_resource type="Animation" uid="uid://blufq8qmbski6" path="res://Animations/JumpCortado.res" id="8_qerwv"]
+[ext_resource type="Animation" uid="uid://ddv426p0j0g26" path="res://Animations/Standard Run.res" id="9_em1qg"]
 
 [sub_resource type="Animation" id="Animation_0fg1n"]
 resource_name = "mixamo_com"
@@ -212,17 +212,17 @@ tracks/27/keys = PackedFloat32Array(0, 1, 0.103003, -0.00912513, -0.00321934, 0.
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2ywhb"]
 _data = {
-"Floating": ExtResource("7_vabeu"),
-"Idle 1": ExtResource("2_i583c"),
-"Idle 2": ExtResource("3_nck3j"),
-"Jump 1": ExtResource("5_qf2ca"),
-"Jump 2": ExtResource("6_4b1mn"),
-"JumpCortado": ExtResource("9_yuq40"),
-"Standard Run": ExtResource("4_3sfbx"),
+"Floating": ExtResource("3_gvrsi"),
+"Idle 1": ExtResource("4_cfnml"),
+"Idle 2": ExtResource("5_h2ogq"),
+"Jump 1": ExtResource("6_cldry"),
+"Jump 2": ExtResource("7_ed15w"),
+"JumpCortado": ExtResource("8_qerwv"),
+"Standard Run": ExtResource("9_em1qg"),
 "TPose": SubResource("Animation_0fg1n")
 }
 
-[node name="Character Base" instance=ExtResource("1_lj4qy")]
+[node name="Character Base" instance=ExtResource("1_ntkme")]
 
 [node name="Skeleton" parent="." index="0"]
 transform = Transform3D(0.999991, -6.67934e-05, 0.00418546, 5.77486e-05, 0.999998, 0.00216437, -0.0041856, -0.00216411, 0.999989, 0, 0, 0)
@@ -268,7 +268,7 @@ transform = Transform3D(0.987288, -0.0551913, -0.14905, -0.0304165, 0.854834, -0
 bone_name = "Chest"
 bone_idx = 2
 
-[node name="PastillaJabon2" parent="Skeleton/BoneAttachment3D" index="0" instance=ExtResource("2_phpeu")]
+[node name="PastillaJabon2" parent="Skeleton/BoneAttachment3D" index="0" instance=ExtResource("2_h08el")]
 transform = Transform3D(-0.184116, 0.0309999, 0.356899, -0.341466, -0.13655, -0.164293, 0.108349, -0.377664, 0.0886978, 0.0898262, -0.0592139, -0.410424)
 
 [node name="AnimationPlayer" parent="." index="1"]
