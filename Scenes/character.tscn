@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://mev7r26i6pax"]
+[gd_scene load_steps=5 format=3 uid="uid://mev7r26i6pax"]
 
 [ext_resource type="Script" path="res://Scenes/character.gd" id="1_kpfip"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_qwvwv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xj7n5"]
+shading_mode = 0
+albedo_color = Color(0.69, 0.52095, 0.207, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y6n54"]
 
@@ -11,6 +15,7 @@ script = ExtResource("1_kpfip")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_qwvwv")
+surface_material_override/0 = SubResource("StandardMaterial3D_xj7n5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_y6n54")
