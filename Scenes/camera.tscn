@@ -5,4 +5,5 @@
 [node name="Camera" type="Camera3D"]
 fov = 20.0
 script = ExtResource("1_rjwtv")
-smooth_factor = 1.0
+offset = Vector3(0, 2, 40)
+smooth_factor = 2.0
