@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bn1j60l3rs4g"]
+
+[resource]
+resource_name = "M_BasuraOscuro"
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.28, 0.217747, 0.1176, 1)
