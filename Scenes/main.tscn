@@ -8,17 +8,25 @@ albedo_color = Color(0.374816, 0.556871, 0.248993, 1)
 
 [node name="Node3D" type="Node3D"]
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_ifjge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11952, 0.515952, 0.0468044)
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.752, 2.561, 40.321)
 fov = 20.0
 
+[node name="Character" parent="." instance=ExtResource("1_ifjge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.878, 0.0413287, 0.00273819)
+
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.80994, -1.59502, -0.226507)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.17945, -1.56995, -0.241213)
 use_collision = true
-size = Vector3(17.4908, 1.55762, 3.55029)
+size = Vector3(22.5721, 1.55762, 3.55029)
 material = SubResource("StandardMaterial3D_32dj5")
 
-[node name="BurbujaTest" type="Node3D" parent="."]
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.70876, 2.33896, -0.447268)
+use_collision = true
+size = Vector3(5.41046, 1.92818, 2.99512)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.51589, 4.38437, -0.876991)
+use_collision = true
+size = Vector3(5.41046, 1.92818, 2.99512)

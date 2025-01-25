@@ -58,10 +58,11 @@ func _physics_process(delta: float) -> void:
 	# el fast fall
 	if not is_on_floor() and Input.is_action_pressed("ui_down"):
 		fall()
+		velocity.y = -4
 
 	# input derecha-izquierda
-	var input_dir := Input.get_vector("ui_left", "ui_right", "", "")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var direction := (transform.basis * Vector3(input_dir.x, 0, 0)).normalized()
 	if direction:
 		velocity.x = move_toward(velocity.x, direction.x * speed, 1)
 		velocity.z = move_toward(velocity.z, direction.z * speed, 1)
@@ -76,5 +77,13 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func fall():
-	velocity.y = -4
 	cant_jump = true
+	if(velocity.y > 0):
+		velocity.y = 0
+
+func _on_bubble_area_shape_entered(area_rid: RID, area: Area3D, area_shape_index: int, local_shape_index: int) -> void:
+	pass # Replace with function body.
+
+func _on_bubble_body_entered(body: Node3D) -> void:
+	fall()
+	pass # Replace with function body.
