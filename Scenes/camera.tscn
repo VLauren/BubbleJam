@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="1_rjwtv"]
 
-[node name="Camera" type="Camera3D"]
+[node name="Camera" type="Camera3D" groups=["camera"]]
 fov = 20.0
 script = ExtResource("1_rjwtv")
 offset = Vector3(0, 2, 40)

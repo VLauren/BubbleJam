@@ -1,10 +1,13 @@
 extends CharacterBody3D
 
+@export var ProjectileScene : PackedScene
+
 enum {MOVING, SHOOTING}
 
 const SPEED = 1.0
 
 var player : CharacterBody3D
+var camera
 
 var direction = Vector2.ZERO
 var previousPosition
@@ -17,7 +20,9 @@ func _ready() -> void:
 	direction = Vector2(1, 0)
 	previousPosition = position
 	player = get_tree().get_nodes_in_group("player")[0]
-
+	# player = get_parent().get_tree().get_nodes_in_group("player")[0]
+	# print(get_parent().get_parent())
+	
 func _process(delta: float) -> void:
 	
 	if(state == MOVING):
@@ -62,12 +67,15 @@ func change_direction():
 
 func shoot():
 	# shoot animation
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(1).timeout
 	
 	# spawn projectil
 	print("shoot!")
+	var p = ProjectileScene.instantiate()
+	get_tree().root.add_child(p)
+	p.start(transform, player)
 	
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(3).timeout
 	state = MOVING
 	return
 
