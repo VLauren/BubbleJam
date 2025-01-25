@@ -29,8 +29,9 @@ func _process(delta: float) -> void:
 	if(dead):
 		return
 		
+	print(target_bubble_size)
 	$Bubble.scale = Vector3.ONE * move_toward($Bubble.scale.x, target_bubble_size, 0.1)
-	if(target_bubble_size < 0.1):
+	if(target_bubble_size < 0.2):
 		$Bubble.scale = Vector3.ONE * 0.001
 	
 	var rot : float
@@ -68,6 +69,8 @@ func _physics_process(delta: float) -> void:
 	
 	# tamaño de la pompa
 	target_bubble_size = jump_count * 1.0
+	if(target_bubble_size == 0):
+		target_bubble_size = 0.001
 	if(jump_count > 1):
 		target_bubble_size += 0.5
 	elif jump_count == 1:
