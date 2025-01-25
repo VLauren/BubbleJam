@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dveptunnuqkvc"]
+
+[resource]
+resource_name = "M_Edificio"
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+metallic = 1.0
+emission_enabled = true
+emission = Color(0.436117, 0.398097, 0.393806, 1)
