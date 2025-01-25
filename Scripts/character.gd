@@ -26,6 +26,9 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	if(Input.is_action_pressed("ui_cancel")):
+		get_tree().quit()
+		
 	if(dead):
 		return
 		
