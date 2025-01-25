@@ -13,5 +13,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	# print(str(player.position) + " " + str(position))
-	# if(player.is_on_floor())
-	position = lerp(position, player.position + offset, smooth_factor * delta)
+	var target = player.position
+	
+	if(not player.is_on_floor()):
+		target.y = position.y - offset.y
+		
+	position = lerp(position, target + offset, smooth_factor * delta)
