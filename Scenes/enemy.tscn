@@ -1,16 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnn1uu4cq4sae"]
+[gd_scene load_steps=5 format=3 uid="uid://cnn1uu4cq4sae"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_ace5i"]
+[ext_resource type="PackedScene" uid="uid://dohudofsul3ab" path="res://Scenes/enemyProjectile.tscn" id="2_u2f30"]
+[ext_resource type="PackedScene" uid="uid://uk31leewjtbq" path="res://Meshes/Prefabs/EnemyRubishScene.tscn" id="3_l56c2"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_jdnte"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_8cspt"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_aw2np"]
+radius = 0.398604
+height = 1.49982
 
 [node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
 script = ExtResource("1_ace5i")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_jdnte")
+ProjectileScene = ExtResource("2_u2f30")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_8cspt")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0284334, 0, 0)
+shape = SubResource("CapsuleShape3D_aw2np")
+
+[node name="EnemyRubish" parent="." instance=ExtResource("3_l56c2")]
+transform = Transform3D(0.12941, 0, 0.482963, 0, 0.5, 0, -0.482963, 0, 0.12941, -0.0986556, -0.707309, 0)

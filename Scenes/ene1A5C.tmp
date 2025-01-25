@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnn1uu4cq4sae"]
+
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_ace5i"]
+[ext_resource type="PackedScene" uid="uid://dohudofsul3ab" path="res://Scenes/enemyProjectile.tscn" id="2_u2f30"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_jdnte"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8cspt"]
+
+[node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
+script = ExtResource("1_ace5i")
+ProjectileScene = ExtResource("2_u2f30")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_jdnte")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_8cspt")
