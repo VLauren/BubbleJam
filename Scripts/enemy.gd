@@ -2,6 +2,9 @@ extends CharacterBody3D
 
 @export var ProjectileScene : PackedScene
 
+@export var stepParticleScene : PackedScene
+@export var vfx : PackedScene
+
 enum {MOVING, SHOOTING}
 
 const SPEED = 2.0
@@ -97,8 +100,9 @@ func shoot():
 	await get_tree().create_timer(0.35).timeout
 	
 	# spawn projectil
-	print("shoot!")
 	var p = ProjectileScene.instantiate()
+	AudioManagerGlobal.play_sound("res://Audio/lanza" + str(randi_range(1,2)) + ".ogg")
+	
 	get_tree().root.add_child(p)
 	p.start($EnemyRubish/ProjectileSpawn.global_transform, player)
 	
@@ -112,7 +116,14 @@ func shoot():
 	canShoot = true
 
 func death():
-	print("enemy death")
+	
+	var v = vfx.instantiate()
+	get_tree().root.add_child(v)
+	(v as GPUParticles3D).position = position
+	(v as GPUParticles3D).restart()
+	
+	AudioManagerGlobal.play_sound("res://Audio/muerte_enemy" + str(randi_range(1,2)) + ".ogg")
+	
 	queue_free()
 	
 func changeAnimation(animationName, transitionTime = 0.1):

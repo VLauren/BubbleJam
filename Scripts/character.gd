@@ -111,15 +111,25 @@ func _physics_process(delta: float) -> void:
 				(vfx as GPUParticles3D).position = position + Vector3(0,-0.7,0)
 				(vfx as GPUParticles3D).restart()
 				
+				var a = AudioManagerGlobal.play_sound("res://Audio/paso" + str(randi_range(1, 5)) + ".ogg")
+				a.volume_db = 10
+				
 			else:
 				velocity.y = jump_vel_2
 				jump_count += 2
 				changeAnimation("Floating")
+				
+				var a = AudioManagerGlobal.play_sound("res://Audio/jump_bubble" + str(randi_range(1, 3)) + ".ogg")
+				a.volume_db = 5
 		elif jump_count > 0 and jump_count < max_jumps:
 			velocity.y = jump_vel_2
 			jump_count += 1
 			speed = speed_2
 			changeAnimation("Floating", 0.5)
+			
+			var a = AudioManagerGlobal.play_sound("res://Audio/jump_bubble" + str(randi_range(1, 3)) + ".ogg")
+			a.volume_db = 5
+			
 		elif jump_count >= max_jumps:
 			fall()
 		
