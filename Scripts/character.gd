@@ -58,7 +58,7 @@ func _process(delta: float) -> void:
 	$CharacterBase.rotation.y = rot
 	
 	#animaciones
-	if(is_on_floor()):
+	if(is_on_floor() and not is_on_wall()):
 		if(input_dir.x != 0):
 			changeAnimation("Standard Run")
 		else:
@@ -77,7 +77,7 @@ func _physics_process(delta: float) -> void:
 			velocity += Vector3(0, -gravity_2, 0) * delta
 		else:
 			velocity += Vector3(0, -gravity_1, 0) * delta
-			cant_jump = false
+			# cant_jump = false
 	# volver a tocar el suelo
 	else:
 		jump_count = 0
@@ -99,7 +99,7 @@ func _physics_process(delta: float) -> void:
 	# saltitos
 	if Input.is_action_just_pressed("ui_accept") and not cant_jump:
 		if jump_count == 0:
-			if(is_on_floor()):
+			if(is_on_floor() and not is_on_wall()):
 				velocity.y = jump_vel_1
 				jump_count += 1
 				changeAnimation("JumpCortado")
@@ -129,7 +129,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, direction.x * speed, 1)
 		velocity.z = move_toward(velocity.z, direction.z * speed, 1)
 	else:
-		if is_on_floor():
+		if is_on_floor() and not is_on_wall():
 			velocity.x = move_toward(velocity.x, 0, 0.4)
 			velocity.z = move_toward(velocity.z, 0, 0.4)
 		else:
