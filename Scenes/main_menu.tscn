@@ -1,9 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://ls8n8orwfkqw"]
+[gd_scene load_steps=24 format=3 uid="uid://ls8n8orwfkqw"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_ky4f1"]
-[ext_resource type="PackedScene" uid="uid://b3swmces4rcbq" path="res://Meshes/Prefabs/edificio_1_wtc.tscn" id="2_m5f4e"]
+[ext_resource type="FontFile" uid="uid://c7anivlg2goqi" path="res://Fonts/Atop-R99O3.ttf" id="2_lwmme"]
+[ext_resource type="PackedScene" path="res://Meshes/Prefabs/edificio_1_wtc.tscn" id="2_m5f4e"]
+[ext_resource type="FontFile" uid="uid://dyp3cke5v8em1" path="res://Fonts/Barrio-Regular.ttf" id="3_htkw2"]
 [ext_resource type="PackedScene" uid="uid://c21gccmlg5qlr" path="res://Scenes/edificios_fondo.tscn" id="3_mbnrs"]
-[ext_resource type="PackedScene" uid="uid://c46sccr4mwx1i" path="res://Meshes/Prefabs/edificio_2_wtc.tscn" id="4_a13no"]
+[ext_resource type="PackedScene" path="res://Meshes/Prefabs/edificio_2_wtc.tscn" id="4_a13no"]
 [ext_resource type="PackedScene" uid="uid://dtutmtesa5ebd" path="res://Meshes/Escenario/Vigas.glb" id="5_wcqm5"]
 [ext_resource type="PackedScene" uid="uid://bqj2c33qm2jbl" path="res://Meshes/Prefabs/pared_wtc.tscn" id="6_60ax0"]
 [ext_resource type="PackedScene" uid="uid://chnd8tgfhoiwa" path="res://Meshes/Prefabs/caja_wtc.tscn" id="7_v53is"]
@@ -12,9 +14,28 @@
 [ext_resource type="PackedScene" uid="uid://bc0i2w7ptnyh8" path="res://Meshes/BasuraBolsa.glb" id="10_580yr"]
 [ext_resource type="PackedScene" uid="uid://h24sqhocgno1" path="res://Meshes/Main Menu/Sitting.fbx" id="11_orjs4"]
 [ext_resource type="PackedScene" uid="uid://e42n7b8v2iag" path="res://Meshes/Prefabs/PastillaJabon.tscn" id="12_wiyd1"]
+[ext_resource type="Texture2D" uid="uid://t0me8v71fy2l" path="res://Krilloud_LOGO_RGB_WHITE.png" id="15_myipm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a3haa"]
-font_size = 91
+font = ExtResource("2_lwmme")
+font_size = 196
+font_color = Color(0.862745, 0.898039, 0.929412, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.533333)
+shadow_offset = Vector2(10, 10)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lxofp"]
+font = ExtResource("3_htkw2")
+font_size = 60
+font_color = Color(0.8649, 0.89962, 0.93, 0.72549)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3wau7"]
+font = ExtResource("3_htkw2")
+font_size = 75
+font_color = Color(0.862745, 0.898039, 0.929412, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.466667)
+shadow_offset = Vector2(7, 7)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gf40u"]
 transparency = 1
@@ -51,30 +72,43 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="."]
-anchors_preset = 14
-anchor_top = 0.5
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -353.0
-offset_bottom = -228.0
+offset_top = 60.0
+offset_bottom = 326.0
 grow_horizontal = 2
-grow_vertical = 2
 text = "Bubble Force"
 label_settings = SubResource("LabelSettings_a3haa")
 horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = -162.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Laurentino Vilchez - Javier Muñoz"
+label_settings = SubResource("LabelSettings_lxofp")
+vertical_alignment = 2
 
 [node name="Label2" type="Label" parent="."]
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = 291.0
-offset_bottom = 416.0
+offset_left = 924.0
+offset_top = 37.0
+offset_right = -20.0
+offset_bottom = 303.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.443894, 0.443894)
-text = "Press any key to continue"
-label_settings = SubResource("LabelSettings_a3haa")
+text = "Pulsa cualquier
+botón para jugar"
+label_settings = SubResource("LabelSettings_3wau7")
 horizontal_alignment = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -267,5 +301,20 @@ explosiveness = 0.25
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_o31d0")
 draw_pass_1 = SubResource("SphereMesh_qjj2j")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -433.0
+offset_top = -128.0
+offset_right = 421.0
+offset_bottom = 126.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_myipm")
 
 [editable path="Sitting"]
