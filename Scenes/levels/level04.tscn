@@ -193,7 +193,7 @@ transform = Transform3D(1.00625, 0, 0, 0, 1.00625, 0, 0, 0, 1.00625, 88.1876, -0
 
 [node name="TriggerLevelEnd" parent="." instance=ExtResource("12_335yu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.5725, 47.8485, -1.93116)
-level = "res://Scenes/levels/level05.tscn"
+level = "res://Scenes/end_scene.tscn"
 
 [node name="EdificiosFondo" parent="." instance=ExtResource("13_37bh6")]
 transform = Transform3D(1.00625, 0, 0, 0, 1.00625, 0, 0, 0, 1.00625, 0, 0, 0)

@@ -264,11 +264,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98.124, 43.4941, -390.056)
 
 [node name="TriggerLevelEnd2" parent="." instance=ExtResource("2_j4v77")]
 transform = Transform3D(2.1988, 0, 0, 0, 2.1988, 0, 0, 0, 2.1988, -4.1481, 53.7006, -1.03207)
-level = "res://Scenes/end_scene.tscn"
+level = "res://Scenes/levels/level04.tscn"
 
 [node name="TriggerLevelEnd2" parent="TriggerLevelEnd2" instance=ExtResource("2_j4v77")]
 transform = Transform3D(0.746877, 0, 0, 0, 1.47331, 0, 0, 0, 2.1988, 46.3996, -7.25895, -0.468957)
-level = "res://Scenes/end_scene.tscn"
+level = "res://Scenes/levels/level04.tscn"
 
 [node name="ParedWtc22" parent="." instance=ExtResource("5_seomu")]
 transform = Transform3D(-3.9661e-08, 12.1721, 0, -0.907338, -5.32058e-07, 0, 0, 0, 9.83744, 64.6768, 13.1748, -1.85344)
