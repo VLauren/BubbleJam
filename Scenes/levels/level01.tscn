@@ -19,7 +19,7 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75051, 2.53023, 40.3495)
 
 [node name="TriggerLevelEnd" parent="." instance=ExtResource("3_8t0gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.7641, -0.79116, -0.151373)
+transform = Transform3D(2.49424, 0, 0, 0, 1, 0, 0, 0, 1, 79.4775, -0.443823, -0.151373)
 level = "res://Scenes/levels/level02.tscn"
 
 [node name="MainCharacter" parent="." instance=ExtResource("3_rotvl")]
@@ -122,7 +122,7 @@ transform = Transform3D(0.484139, 0, 0, 0, 0.599917, 0, 0, 0, 0.489258, 87.0573,
 transform = Transform3D(0.647026, 0, 0.484037, 0, 0.808044, 0, -0.484037, 0, 0.647026, -1.61208, -1.35273, -8.84719)
 
 [node name="SeñalFinal" parent="." instance=ExtResource("10_ummyc")]
-transform = Transform3D(0.414552, 0, 0, 0, 0.414552, 0, 0, 0, 0.414552, 77.59, -1.54607, -1.98265)
+transform = Transform3D(0.414552, 0, 0, 0, 0.414552, 0, 0, 0, 0.414552, 79.8301, -1.54607, -1.98265)
 
 [node name="CajaWtc8" parent="." instance=ExtResource("5_6m2km")]
 transform = Transform3D(0.440668, 0, 0, 0, 0.440668, 0, 0, 0, 0.440668, 73.9258, -1.51541, -9.9534)
