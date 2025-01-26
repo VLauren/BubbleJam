@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnn1uu4cq4sae"]
+[gd_scene load_steps=7 format=3 uid="uid://cnn1uu4cq4sae"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_ace5i"]
 [ext_resource type="PackedScene" uid="uid://dohudofsul3ab" path="res://Scenes/enemyProjectile.tscn" id="2_u2f30"]
 [ext_resource type="PackedScene" uid="uid://b1o32axsqc5oa" path="res://Scenes/VFXSalto.tscn" id="3_2iu84"]
 [ext_resource type="PackedScene" uid="uid://uk31leewjtbq" path="res://Meshes/Prefabs/EnemyRubishScene.tscn" id="3_l56c2"]
+[ext_resource type="PackedScene" uid="uid://skfsav6gs3ev" path="res://Scenes/VFX1.tscn" id="4_dhhf3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_aw2np"]
 radius = 0.687802
@@ -14,6 +15,7 @@ floor_snap_length = 0.0
 script = ExtResource("1_ace5i")
 ProjectileScene = ExtResource("2_u2f30")
 stepParticleScene = ExtResource("3_2iu84")
+vfx = ExtResource("4_dhhf3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0908142, 0.40674, -0.0348823)
