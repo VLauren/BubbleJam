@@ -259,6 +259,9 @@ transform = Transform3D(0.479119, 0, 0.334337, 0, 0.58424, 0, -0.334337, 0, 0.47
 [node name="EdificiosFondo" parent="." instance=ExtResource("12_qgimw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
 
+[node name="SeñalFinal2" parent="EdificiosFondo" instance=ExtResource("6_8m2sv")]
+transform = Transform3D(0.0684711, 0.40639, -0.0448534, -0.178216, 0.0705959, 0.36757, 0.367972, -0.0414287, 0.186368, 49.8657, 9.48539, -0.178639)
+
 [node name="EdificiosFondo2" parent="." instance=ExtResource("12_qgimw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98.124, 43.4941, -390.056)
 

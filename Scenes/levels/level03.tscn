@@ -22,7 +22,7 @@ transform = Transform3D(0.993791, 0, 0, 0, 0.993791, 0, 0, 0, 0.993791, 0, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75051, 2.53023, 40.3495)
 
 [node name="TriggerLevelEnd" parent="." instance=ExtResource("3_33rye")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.4919, 3.47852, -0.629936)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.9407, 3.47852, -0.629936)
 level = "res://Scenes/levels/level05.tscn"
 
 [node name="MainCharacter" parent="." instance=ExtResource("3_8wv54")]
@@ -116,7 +116,7 @@ transform = Transform3D(0.484139, 0, 0, 0, 0.599917, 0, 0, 0, 0.489258, 98.7983,
 transform = Transform3D(0.484139, 0, 0, 0, 0.599917, 0, 0, 0, 0.489258, 98.7983, 11.1321, -1.32496)
 
 [node name="SeñalFinal" parent="." instance=ExtResource("10_b55id")]
-transform = Transform3D(0.414552, 0, 0, 0, 0.414552, 0, 0, 0, 0.414552, 89.331, 3.14124, -1.98265)
+transform = Transform3D(0.414552, 0, 0, 0, 0.414552, 0, 0, 0, 0.414552, 90.7798, 3.14124, -1.98265)
 
 [node name="CajaWtc10" parent="." instance=ExtResource("8_yr06q")]
 transform = Transform3D(0.440668, 0, 0, 0, 0.440668, 0, 0, 0, 0.440668, 85.6668, 3.1719, -9.9534)
@@ -147,3 +147,9 @@ transform = Transform3D(1.00625, 0, 0, 0, 1.00625, 0, 0, 0, 1.00625, 0, 0, 0)
 
 [node name="Enemy" parent="." instance=ExtResource("14_10gh0")]
 transform = Transform3D(1.00625, 0, 0, 0, 1.00625, 0, 0, 0, 1.00625, 25.4828, 6.13185, -1.49843)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.60489, 0, 0, 0, 1.43765, 99.1331, 33.0377, -4.9195)
+visible = false
+use_collision = true
+size = Vector3(5.8492, 44.9879, 8.14893)
