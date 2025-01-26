@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cfs2ohkpc8gji"]
+[gd_scene load_steps=13 format=3 uid="uid://cfs2ohkpc8gji"]
 
 [ext_resource type="PackedScene" uid="uid://bs7sai2tuoww0" path="res://Scenes/camera.tscn" id="1_0ovle"]
 [ext_resource type="PackedScene" uid="uid://b5xegt20ea1kd" path="res://Scenes/trigger_level_end.tscn" id="3_8t0gf"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bc0i2w7ptnyh8" path="res://Meshes/BasuraBolsa.glb" id="9_4g0ki"]
 [ext_resource type="PackedScene" uid="uid://j3a07clu7bpq" path="res://Meshes/SeñalFinal.glb" id="10_ummyc"]
 [ext_resource type="PackedScene" uid="uid://cvs7kluj7cm8c" path="res://Meshes/SetLimpieza.glb" id="11_olxqp"]
+[ext_resource type="PackedScene" uid="uid://c21gccmlg5qlr" path="res://Scenes/edificios_fondo.tscn" id="12_dw3uk"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -134,3 +135,6 @@ transform = Transform3D(-0.503208, 0, 0.54515, 0, 0.741894, 0, -0.54515, 0, -0.5
 
 [node name="SetLimpieza2" parent="." instance=ExtResource("11_olxqp")]
 transform = Transform3D(0.710993, 0, 0, 0, 0.710993, 0, 0, 0, 0.710993, 81.9749, -1.44911, -6.74593)
+
+[node name="EdificiosFondo" parent="." instance=ExtResource("12_dw3uk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9206, 0, 0)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b1u1w1koo38sv"]
+[gd_scene load_steps=13 format=3 uid="uid://b1u1w1koo38sv"]
 
 [ext_resource type="PackedScene" uid="uid://bs7sai2tuoww0" path="res://Scenes/camera.tscn" id="1_x0vmv"]
 [ext_resource type="PackedScene" uid="uid://7wl1lrith1tu" path="res://Scenes/mainChar.tscn" id="3_7qpj1"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b3swmces4rcbq" path="res://Meshes/Prefabs/edificio_1_wtc.tscn" id="9_ykrvq"]
 [ext_resource type="PackedScene" uid="uid://cvs7kluj7cm8c" path="res://Meshes/SetLimpieza.glb" id="11_3v22e"]
 [ext_resource type="PackedScene" uid="uid://bc0i2w7ptnyh8" path="res://Meshes/BasuraBolsa.glb" id="11_bh84n"]
+[ext_resource type="PackedScene" uid="uid://c21gccmlg5qlr" path="res://Scenes/edificios_fondo.tscn" id="12_ocumm"]
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000274658, -0.132662, 0.00671387)
@@ -96,7 +97,7 @@ transform = Transform3D(0.468824, 0, 0, 0, 0.429398, 0, 0, 0, 0.534948, -6.19038
 transform = Transform3D(0.756084, 0, 0, 0, 1.00864, 0, 0, 0, 0.860406, 26.8836, 13.0465, -11.6575)
 
 [node name="Edificio1wtc2" parent="." instance=ExtResource("9_ykrvq")]
-transform = Transform3D(-3.30495e-08, 0, 0.866836, 0, 0.992131, 0, -0.756084, 0, -3.78906e-08, 35.3592, -26.9503, -19.9823)
+transform = Transform3D(-3.30495e-08, 0, 0.860406, 0, 1.00864, 0, -0.756084, 0, -3.76095e-08, 35.269, -27.8517, -19.8847)
 
 [node name="CajaWtc" parent="." instance=ExtResource("8_fbx4e")]
 transform = Transform3D(0.318025, 0, 0, 0, 0.318025, 0, 0, 0, 0.318025, -3.88663, 42.6232, -10.2481)
@@ -112,3 +113,6 @@ transform = Transform3D(-0.842189, 0, 0.539182, 0, 1, 0, -0.539182, 0, -0.842189
 
 [node name="SetLimpieza2" parent="." instance=ExtResource("11_3v22e")]
 transform = Transform3D(0.677641, 0, 0.215208, 0, 0.710993, 0, -0.215208, 0, 0.677641, -2.03467, 42.5486, -6.74593)
+
+[node name="EdificiosFondo" parent="." instance=ExtResource("12_ocumm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.0044, 0, 0)
