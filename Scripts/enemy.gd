@@ -101,7 +101,8 @@ func shoot():
 	
 	# spawn projectil
 	var p = ProjectileScene.instantiate()
-	AudioManagerGlobal.play_sound("res://Audio/lanza" + str(randi_range(1,2)) + ".ogg")
+	var a = AudioManagerGlobal.play_sound("res://Audio/lanza" + str(randi_range(1,2)) + ".ogg")
+	a.volume_db = 5
 	
 	get_tree().root.add_child(p)
 	p.start($EnemyRubish/ProjectileSpawn.global_transform, player)
