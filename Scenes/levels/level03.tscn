@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://rh4qft7sotor"]
+[gd_scene load_steps=15 format=3 uid="uid://rh4qft7sotor"]
 
 [ext_resource type="PackedScene" uid="uid://bs7sai2tuoww0" path="res://Scenes/camera.tscn" id="1_whuoq"]
 [ext_resource type="PackedScene" uid="uid://7wl1lrith1tu" path="res://Scenes/mainChar.tscn" id="3_8wv54"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bc0i2w7ptnyh8" path="res://Meshes/BasuraBolsa.glb" id="11_q33mk"]
 [ext_resource type="PackedScene" uid="uid://cvs7kluj7cm8c" path="res://Meshes/SetLimpieza.glb" id="12_dbfbs"]
 [ext_resource type="PackedScene" uid="uid://c21gccmlg5qlr" path="res://Scenes/edificios_fondo.tscn" id="13_wo5bl"]
+[ext_resource type="PackedScene" uid="uid://cnn1uu4cq4sae" path="res://Scenes/enemy.tscn" id="14_10gh0"]
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(0.993791, 0, 0, 0, 0.993791, 0, 0, 0, 0.993791, 0, 0, 0)
@@ -91,13 +92,13 @@ transform = Transform3D(0.367227, 0, 0, 0, 0.442316, 0, 0, 0, 0.4147, 40.3696, 1
 transform = Transform3D(0.820627, 0, 0, 0, 0.506055, 0, 0, 0, 0.515266, -4.64719, 8.2455, -1.62735)
 
 [node name="ParedWtc" parent="." instance=ExtResource("8_cboff")]
-transform = Transform3D(3.22597, 0, 0, 0, 1.00625, 0, 0, 0, 1.00625, 24.333, 4.37096, -0.711647)
+transform = Transform3D(3.22597, 0, 0, 0, 1.00625, 0, 0, 0, 2.37101, 24.333, 4.37096, -1.82982)
 
 [node name="ParedWtc2" parent="." instance=ExtResource("8_cboff")]
-transform = Transform3D(2.87147, 0, 0, 0, 1.00625, 0, 0, 0, 1.00625, 60.5738, 5.99118, -0.711646)
+transform = Transform3D(2.87147, 0, 0, 0, 1.00625, 0, 0, 0, 2.76158, 60.5738, 5.99118, -1.84767)
 
 [node name="ParedWtc6" parent="." instance=ExtResource("8_cboff")]
-transform = Transform3D(2.73853, 0, 0, 0, 0.187462, 0, 0, 0, 1.39864, 71.4145, 15.346, -0.442723)
+transform = Transform3D(2.73853, 0, 0, 0, 0.218704, 0, 0, 0, 3.34502, 71.4145, 15.5017, -2.19024)
 
 [node name="CajaWtc8" parent="." instance=ExtResource("8_yr06q")]
 transform = Transform3D(-2.21303e-08, 0, 0.479813, 0, 0.511696, 0, -0.506283, 0, -2.09733e-08, 70.3174, 15.4222, -0.333973)
@@ -143,3 +144,6 @@ transform = Transform3D(-1.00201, 0, -0.0922131, 0, 1.00625, 0, 0.0922131, 0, -1
 
 [node name="EdificiosFondo" parent="." instance=ExtResource("13_wo5bl")]
 transform = Transform3D(1.00625, 0, 0, 0, 1.00625, 0, 0, 0, 1.00625, 0, 0, 0)
+
+[node name="Enemy" parent="." instance=ExtResource("14_10gh0")]
+transform = Transform3D(1.00625, 0, 0, 0, 1.00625, 0, 0, 0, 1.00625, 25.4828, 6.13185, -1.49843)
