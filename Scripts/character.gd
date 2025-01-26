@@ -46,13 +46,14 @@ func _process(delta: float) -> void:
 	$Bubble.scale = Vector3.ONE * move_toward($Bubble.scale.x, target_bubble_size, 0.1)
 	if(target_bubble_size < 0.2):
 		$Bubble.scale = Vector3.ONE * 0.001
-		musicFast.volume_db = move_toward(musicFast.volume_db, 0, 0.5)
-		musicSlow.volume_db = move_toward(musicSlow.volume_db, -20, 0.5)
+		if(is_instance_valid(musicFast) && is_instance_valid(musicSlow)):
+			musicFast.volume_db = move_toward(musicFast.volume_db, 0, 0.5)
+			musicSlow.volume_db = move_toward(musicSlow.volume_db, -20, 0.5)
 	else:
-		musicFast.volume_db = move_toward(musicFast.volume_db, -20, 0.5)
-		musicSlow.volume_db = move_toward(musicSlow.volume_db, 0, 0.5)
-	
-	
+		if(is_instance_valid(musicFast) && is_instance_valid(musicSlow)):
+			musicFast.volume_db = move_toward(musicFast.volume_db, -20, 0.5)
+			musicSlow.volume_db = move_toward(musicSlow.volume_db, 0, 0.5)
+		
 	var rot : float
 	rot = $CharacterBase.rotation.y
 	if(velocity.x > 0):

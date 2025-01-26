@@ -226,7 +226,7 @@ transform = Transform3D(0.61069, 0, 0, 0, 0.756732, 0, 0, 0, 0.617147, 5.73031, 
 transform = Transform3D(0.61069, 0, 0, 0, 0.756732, 0, 0, 0, 0.617147, 14.0343, -61.7043, -68.0445)
 
 [node name="Sitting" parent="." instance=ExtResource("11_orjs4")]
-transform = Transform3D(1.06529, 0, 0.283911, 0, 1.10248, 0, -0.283911, 0, 1.06529, -5.13259, -10.4771, -26.4543)
+transform = Transform3D(1.06529, 0, 0.283911, 0, 1.10248, 0, -0.283911, 0, 1.06529, -5.14332, -10.4771, -26.465)
 
 [node name="Skeleton" parent="Sitting" index="0"]
 bones/0/position = Vector3(0.00535994, 2.18875, -0.810074)

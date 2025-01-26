@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://bs7sai2tuoww0" path="res://Scenes/camera.tscn" id="1_12f2e"]
 [ext_resource type="PackedScene" uid="uid://7wl1lrith1tu" path="res://Scenes/mainChar.tscn" id="3_v6bro"]
 [ext_resource type="PackedScene" uid="uid://dtutmtesa5ebd" path="res://Meshes/Escenario/Vigas.glb" id="4_gmbfj"]
-[ext_resource type="PackedScene" uid="uid://b3swmces4rcbq" path="res://Meshes/Prefabs/edificio_1_wtc.tscn" id="5_nu3nv"]
-[ext_resource type="PackedScene" uid="uid://c46sccr4mwx1i" path="res://Meshes/Prefabs/edificio_2_wtc.tscn" id="6_m2s43"]
+[ext_resource type="PackedScene" path="res://Meshes/Prefabs/edificio_1_wtc.tscn" id="5_nu3nv"]
+[ext_resource type="PackedScene" path="res://Meshes/Prefabs/edificio_2_wtc.tscn" id="6_m2s43"]
 [ext_resource type="PackedScene" uid="uid://bqj2c33qm2jbl" path="res://Meshes/Prefabs/pared_wtc.tscn" id="7_rs4fd"]
 [ext_resource type="PackedScene" uid="uid://chnd8tgfhoiwa" path="res://Meshes/Prefabs/caja_wtc.tscn" id="8_wy3l0"]
 [ext_resource type="PackedScene" uid="uid://j3a07clu7bpq" path="res://Meshes/SeñalFinal.glb" id="10_14p1k"]
@@ -166,6 +166,9 @@ transform = Transform3D(-2.21303e-08, 0, 0.479812, 0, 0.511696, 0, -0.506283, 0,
 
 [node name="ParedWtc7" parent="." instance=ExtResource("7_rs4fd")]
 transform = Transform3D(2.00911, 0, 0, 0, 0.187462, 0, 0, 0, 1.39864, 67.0882, 16.7153, -0.442722)
+
+[node name="ParedWtc13" parent="." instance=ExtResource("7_rs4fd")]
+transform = Transform3D(2.00911, 0, 0, 0, 0.187462, 0, 0, 0, 1.39864, 74.4325, 10.4853, -0.442722)
 
 [node name="CajaWtc12" parent="." instance=ExtResource("8_wy3l0")]
 transform = Transform3D(-2.21303e-08, 0, 0.479812, 0, 0.511696, 0, -0.506283, 0, -2.09733e-08, 73.9787, 25.8157, -0.333972)
