@@ -35,7 +35,7 @@ transform = Transform3D(-2.21303e-08, 0, 0.479813, 0, 0.511696, 0, -0.506283, 0,
 transform = Transform3D(-2.21303e-08, 0, 0.479813, 0, 0.511696, 0, -0.506283, 0, -2.09733e-08, 28.7544, 23.508, -0.136537)
 
 [node name="CajaWtc8" parent="." instance=ExtResource("7_3rhtx")]
-transform = Transform3D(-2.21303e-08, 0, 0.479813, 0, 0.511696, 0, -0.506283, 0, -2.09733e-08, 48.9053, 45.2674, -0.136537)
+transform = Transform3D(-1.20865e-08, 0, 0.262051, 0, 0.279464, 0, -0.276508, 0, -1.14546e-08, 49.5011, 45.2674, 0.270346)
 
 [node name="CajaWtc9" parent="." instance=ExtResource("7_3rhtx")]
 transform = Transform3D(-2.21303e-08, 0, 0.479813, 0, 0.511696, 0, -0.506283, 0, -2.09733e-08, 51.2366, 45.2674, -0.136537)
@@ -167,7 +167,7 @@ transform = Transform3D(0.484139, 0, 0, 0, 0.599917, 0, 0, 0, 0.489258, 63.4656,
 transform = Transform3D(2.65109, 0, 0, 0, 1, 0, 0, 0, 1.57117, 80.8317, 3.10802, -0.346943)
 
 [node name="ParedWtc15" parent="." instance=ExtResource("5_seomu")]
-transform = Transform3D(2.65109, 0, 0, 0, 1, 0, 0, 0, 1.57117, 98.3223, 38.6892, -4.44279)
+transform = Transform3D(2.65109, 0, 0, 0, 1, 0, 0, 0, 1.57117, 98.3223, 38.7291, -3.02995)
 
 [node name="Vigas28" parent="." instance=ExtResource("8_lye5c")]
 transform = Transform3D(0.484139, 0, 0, 0, 0.599917, 0, 0, 0, 0.489258, 79.4972, -19.362, -0.849884)
@@ -176,7 +176,7 @@ transform = Transform3D(0.484139, 0, 0, 0, 0.599917, 0, 0, 0, 0.489258, 79.4972,
 transform = Transform3D(0.484139, 0, 0, 0, 0.599917, 0, 0, 0, 0.489258, 82.3038, -19.362, -0.849884)
 
 [node name="Vigas32" parent="." instance=ExtResource("8_lye5c")]
-transform = Transform3D(0.769511, 0, 0, 0, 0.282869, 0, 0, 0, 0.564186, 98.2976, 27.7074, -4.54613)
+transform = Transform3D(0.769511, 0, 0, 0, 0.282869, 0, 0, 0, 0.564186, 98.2976, 27.7473, -3.13329)
 
 [node name="Vigas30" parent="." instance=ExtResource("8_lye5c")]
 transform = Transform3D(0.484139, 0, 0, 0, 0.599917, 0, 0, 0, 0.489258, 79.4972, -41.5551, -0.849884)
@@ -242,7 +242,7 @@ transform = Transform3D(0.764562, 0, 0, 0, 0.825784, 0, 0, 0, 0.698816, 102.997,
 transform = Transform3D(0.154119, -0.358526, 0.139857, 0.0563386, 0.170052, 0.373847, -0.380692, -0.119979, 0.111945, 55.0719, 45.2651, -2.90821)
 
 [node name="SeñalFinal2" parent="." instance=ExtResource("6_8m2sv")]
-transform = Transform3D(0.414552, 0, 0, 0, 0.414552, 0, 0, 0, 0.414552, 98.2863, 39.4093, -3.56064)
+transform = Transform3D(0.414552, 0, 0, 0, 0.414552, 0, 0, 0, 0.414552, 98.2863, 39.4093, -2.1478)
 
 [node name="ParedWtc17" parent="." instance=ExtResource("5_seomu")]
 transform = Transform3D(3.14022, 0, 0, 0, 0.984191, 0, 0, 0, 4.15867, -4.0353, 53.2951, -0.724082)
@@ -254,7 +254,7 @@ transform = Transform3D(3.14022, 0, 0, 0, 0.984191, 0, 0, 0, 4.15867, 10.8339, 5
 transform = Transform3D(0.407998, 0, 0, 0, 0.407998, 0, 0, 0, 0.407998, -2.18837, 54.0037, -4.15432)
 
 [node name="SetLimpieza2" parent="." instance=ExtResource("11_ehey7")]
-transform = Transform3D(0.479119, 0, 0.334337, 0, 0.58424, 0, -0.334337, 0, 0.479119, 58.3913, 45.8345, 4.75975)
+transform = Transform3D(0.479119, 0, 0.334337, 0, 0.58424, 0, -0.334337, 0, 0.479119, 58.3913, 45.7047, 4.75975)
 
 [node name="EdificiosFondo" parent="." instance=ExtResource("12_qgimw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
@@ -262,10 +262,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
 [node name="EdificiosFondo2" parent="." instance=ExtResource("12_qgimw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98.124, 43.4941, -390.056)
 
-[node name="TriggerLevelEnd" parent="." instance=ExtResource("2_j4v77")]
-transform = Transform3D(3.47557, 0, 0, 0, 3.47557, 0, 0, 0, 3.47557, 97.9118, 33.7943, -1.03207)
-level = "res://Scenes/end_scene.tscn"
-
 [node name="TriggerLevelEnd2" parent="." instance=ExtResource("2_j4v77")]
 transform = Transform3D(2.1988, 0, 0, 0, 2.1988, 0, 0, 0, 2.1988, -4.1481, 53.7006, -1.03207)
 level = "res://Scenes/end_scene.tscn"
+
+[node name="TriggerLevelEnd2" parent="TriggerLevelEnd2" instance=ExtResource("2_j4v77")]
+transform = Transform3D(0.746877, 0, 0, 0, 1.47331, 0, 0, 0, 2.1988, 46.3996, -7.25895, -0.468957)
+level = "res://Scenes/end_scene.tscn"
+
+[node name="ParedWtc22" parent="." instance=ExtResource("5_seomu")]
+transform = Transform3D(-3.9661e-08, 12.1721, 0, -0.907338, -5.32058e-07, 0, 0, 0, 9.83744, 64.6768, 13.1748, -1.85344)

@@ -77,10 +77,10 @@ transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 60.5551, -16.6963, -4.3
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 60.5551, -38.8521, -4.32093)
 
 [node name="Vigas7" parent="." instance=ExtResource("8_ccrqg")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 71.8421, -6.66134, -4.32093)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 72.671, -15.2267, -4.32093)
 
 [node name="Vigas19" parent="." instance=ExtResource("8_ccrqg")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 71.8421, -26.4823, -4.32093)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 72.671, -35.0476, -4.32093)
 
 [node name="Edificio1wtc" parent="." instance=ExtResource("8_judsh")]
 transform = Transform3D(1.00625, 0, 0, 0, 1.00625, 0, 0, 0, 0.597151, 9.08469, -41.6281, -0.720081)
@@ -98,13 +98,13 @@ transform = Transform3D(3.22597, 0, 0, 0, 1.00625, 0, 0, 0, 2.37101, 24.333, 4.3
 transform = Transform3D(2.87147, 0, 0, 0, 1.00625, 0, 0, 0, 2.76158, 60.5738, 5.99118, -1.84767)
 
 [node name="ParedWtc6" parent="." instance=ExtResource("8_cboff")]
-transform = Transform3D(2.73853, 0, 0, 0, 0.218704, 0, 0, 0, 3.34502, 71.4145, 15.5017, -2.19024)
+transform = Transform3D(2.73853, 0, 0, 0, 0.218704, 0, 0, 0, 3.34502, 72.2434, 6.93638, -2.19024)
 
 [node name="CajaWtc8" parent="." instance=ExtResource("8_yr06q")]
-transform = Transform3D(-2.21303e-08, 0, 0.479813, 0, 0.511696, 0, -0.506283, 0, -2.09733e-08, 70.3174, 15.4222, -0.333973)
+transform = Transform3D(0.0380662, 0, 0.478455, 0, 0.511696, 0, -0.50485, 0, 0.0360759, 71.1497, 6.85687, -0.423232)
 
 [node name="CajaWtc9" parent="." instance=ExtResource("8_yr06q")]
-transform = Transform3D(-2.21303e-08, 0, 0.479813, 0, 0.511696, 0, -0.506283, 0, -2.09733e-08, 72.6917, 15.4222, -0.333973)
+transform = Transform3D(0.0380662, 0, 0.478455, 0, 0.511696, 0, -0.50485, 0, 0.0360759, 73.5172, 6.85687, -0.244714)
 
 [node name="Edificio3wtc" parent="." instance=ExtResource("9_28bn6")]
 transform = Transform3D(0.905584, 0, 0, 0, 1, 0, 0, 0, 0.489446, 95.3813, -36.9554, -0.416518)

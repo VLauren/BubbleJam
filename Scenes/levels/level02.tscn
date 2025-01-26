@@ -116,3 +116,12 @@ transform = Transform3D(0.677641, 0, 0.215208, 0, 0.710993, 0, -0.215208, 0, 0.6
 
 [node name="EdificiosFondo" parent="." instance=ExtResource("12_ocumm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.0044, 0, 0)
+
+[node name="Vigas27" parent="." instance=ExtResource("9_54l2v")]
+transform = Transform3D(0.706747, 0, 0, 0, -5.28261e-09, -0.184179, 0, 0.211385, -4.60271e-09, 22.7369, 23.4696, -9.46685)
+
+[node name="Vigas28" parent="." instance=ExtResource("9_54l2v")]
+transform = Transform3D(0.706747, 0, 0, 0, -5.28261e-09, -0.113227, 0, 0.211385, -2.8296e-09, 18.3476, 33.3286, -9.46685)
+
+[node name="Vigas29" parent="." instance=ExtResource("9_54l2v")]
+transform = Transform3D(0.706747, 0, 0, 0, -5.28261e-09, -0.113227, 0, 0.211385, -2.8296e-09, 24.2678, 13.5215, -9.46685)
