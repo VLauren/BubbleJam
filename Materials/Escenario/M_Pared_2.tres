@@ -4,4 +4,4 @@
 resource_name = "M_Pared"
 cull_mode = 2
 shading_mode = 0
-albedo_color = Color(0.388235, 0.427451, 0.466667, 1)
+albedo_color = Color(0.346456, 0.383151, 0.419831, 1)

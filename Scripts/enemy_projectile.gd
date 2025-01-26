@@ -7,6 +7,7 @@ func start(_transform, _player):
 	look_at(_player.position)
 
 func _process(delta: float) -> void:
+	$LataPro2.rotate(transform.basis.z, delta * TAU)
 	position -= transform.basis.z * speed * delta
 
 func _on_area_shape_entered(area_rid: RID, area, area_shape_index: int, local_shape_index: int) -> void:

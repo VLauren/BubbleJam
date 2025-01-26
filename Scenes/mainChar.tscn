@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b7our52x0rdaj" path="res://Scenes/VFXSoap.tscn" id="7_jee1n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y6n54"]
-size = Vector3(0.616638, 1.48453, 1)
+size = Vector3(0.616638, 2.75144, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_utaet"]
 
@@ -23,7 +23,7 @@ vfxSalto = ExtResource("3_a8f3d")
 vfxPop = ExtResource("4_gv3oq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0714417, -0.0345739, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0714417, 0.598882, 0)
 shape = SubResource("BoxShape3D_y6n54")
 
 [node name="Bubble" type="Area3D" parent="." groups=["player"]]
