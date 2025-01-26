@@ -34,11 +34,11 @@ transform = Transform3D(-2.21303e-08, 0, 0.479813, 0, 0.511696, 0, -0.506283, 0,
 [node name="CajaWtc7" parent="." instance=ExtResource("7_3rhtx")]
 transform = Transform3D(-2.21303e-08, 0, 0.479813, 0, 0.511696, 0, -0.506283, 0, -2.09733e-08, 28.7544, 23.508, -0.136537)
 
-[node name="CajaWtc8" parent="." instance=ExtResource("7_3rhtx")]
-transform = Transform3D(-1.20865e-08, 0, 0.262051, 0, 0.279464, 0, -0.276508, 0, -1.14546e-08, 49.5011, 45.2674, 0.270346)
-
 [node name="CajaWtc9" parent="." instance=ExtResource("7_3rhtx")]
-transform = Transform3D(-2.21303e-08, 0, 0.479813, 0, 0.511696, 0, -0.506283, 0, -2.09733e-08, 51.2366, 45.2674, -0.136537)
+transform = Transform3D(-2.21303e-08, 0, 0.479813, 0, 0.511696, 0, -0.506283, 0, -2.09733e-08, 51.0567, 45.2674, -0.136537)
+
+[node name="CajaWtc12" parent="." instance=ExtResource("7_3rhtx")]
+transform = Transform3D(-2.21303e-08, 0, 0.479813, 0, 0.511696, 0, -0.506283, 0, -2.09733e-08, 48.7183, 45.2674, -0.136537)
 
 [node name="CajaWtc10" parent="." instance=ExtResource("7_3rhtx")]
 transform = Transform3D(-0.469835, 0, 0.780516, 0, 0.958305, 0, -0.823575, 0, -0.445271, 105.557, 32.3941, 2.22514)
