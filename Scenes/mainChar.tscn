@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://7wl1lrith1tu"]
+[gd_scene load_steps=9 format=3 uid="uid://7wl1lrith1tu"]
 
 [ext_resource type="Script" path="res://Scripts/character.gd" id="1_frv54"]
+[ext_resource type="PackedScene" uid="uid://skfsav6gs3ev" path="res://Scenes/VFX1.tscn" id="2_dowmu"]
 [ext_resource type="Material" uid="uid://muj32bhsg267" path="res://Materials/bubble.tres" id="2_nj37i"]
+[ext_resource type="PackedScene" uid="uid://b1o32axsqc5oa" path="res://Scenes/VFXSalto.tscn" id="3_a8f3d"]
 [ext_resource type="PackedScene" uid="uid://cvykag5pcp5p2" path="res://Meshes/Prefabs/EscenaCharGeneradaDeFBX.tscn" id="3_dsa1f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y6n54"]
@@ -14,6 +16,8 @@ size = Vector3(0.616638, 1.48453, 1)
 [node name="MainCharacter" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00292277, 1.19209e-07, -0.00447547)
 script = ExtResource("1_frv54")
+vfx1 = ExtResource("2_dowmu")
+vfxSalto = ExtResource("3_a8f3d")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0714417, -0.0345739, 0)

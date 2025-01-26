@@ -1,6 +1,8 @@
 extends CharacterBody3D
 
 @export var xLimit = Vector2(-5, 1000)
+@export var vfx1 : PackedScene
+@export var vfxSalto : PackedScene
 
 const max_jumps = 5
 
@@ -103,6 +105,12 @@ func _physics_process(delta: float) -> void:
 				velocity.y = jump_vel_1
 				jump_count += 1
 				changeAnimation("JumpCortado")
+				
+				var vfx = vfxSalto.instantiate()
+				get_tree().root.add_child(vfx)
+				(vfx as GPUParticles3D).position = position + Vector3(0,-0.7,0)
+				(vfx as GPUParticles3D).restart()
+				
 			else:
 				velocity.y = jump_vel_2
 				jump_count += 2
@@ -175,11 +183,17 @@ func _on_bubble_body_entered(body) -> void:
 
 
 func death():
+	if(dead):
+		return
 	dead = true
+	
 	$CharacterBase.visible = false
 	$Bubble.visible = false
 	
-	# VFX, SFX
+	var vfx = vfx1.instantiate()
+	get_tree().root.add_child(vfx)
+	(vfx as GPUParticles3D).position = position
+	(vfx as GPUParticles3D).restart()
 	
 	AudioManagerGlobal.play_sound("res://Audio/muerte.ogg")
 	

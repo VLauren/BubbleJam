@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1o32axsqc5oa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0dc1k"]
+shading_mode = 0
+
+[sub_resource type="Curve" id="Curve_xqsee"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.989899, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_u4r8o"]
+curve = SubResource("Curve_xqsee")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_o31d0"]
+radial_velocity_min = -2.23517e-05
+radial_velocity_max = 2.99998
+gravity = Vector3(0, 0, 0)
+scale_min = 0.3
+scale_max = 0.4
+scale_curve = SubResource("CurveTexture_u4r8o")
+
+[sub_resource type="SphereMesh" id="SphereMesh_qjj2j"]
+
+[node name="VFXSalto" type="GPUParticles3D"]
+material_override = SubResource("StandardMaterial3D_0dc1k")
+emitting = false
+amount = 10
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.79
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_o31d0")
+draw_pass_1 = SubResource("SphereMesh_qjj2j")

@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 		lockY = true
 		# if (((position.y - offset.y) - target.y) < -0.5) and ((position.y - offset.y) - target.y) > -8:
 		# print(abs(position.y - target.y))
-		if(abs(position.y - target.y) > 4):
+		if(abs(position.y - target.y) > 3):
 			lockY = false
 			
 	# if(lockY):
@@ -41,7 +41,7 @@ func _process(delta: float) -> void:
 			position.y = lerp(position.y, target.y + offset.y, smooth_factor * delta)
 			# position.y = move_toward(position.y, target.y + offset.y, 0.1)
 		else:
-			position.y = lerp(position.y, target.y + offset.y, smooth_factor * 0.1 * delta)
+			position.y = lerp(position.y, target.y + offset.y, smooth_factor * 0.14 * delta)
 			# position.y = move_toward(position.y, target.y + offset.y, 0.01)
 	
 	if(position.x < minPos.x):
