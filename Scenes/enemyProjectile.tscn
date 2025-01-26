@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dohudofsul3ab"]
+[gd_scene load_steps=10 format=3 uid="uid://dohudofsul3ab"]
 
 [ext_resource type="Script" path="res://Scripts/enemy_projectile.gd" id="1_h4cry"]
 
@@ -10,6 +10,28 @@
 shading_mode = 0
 albedo_color = Color(0.498039, 0.321569, 0.203922, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_re4p3"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.323, 0.205, 0.615686)
+
+[sub_resource type="Curve" id="Curve_xqsee"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.989899, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_u4r8o"]
+curve = SubResource("Curve_xqsee")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_o31d0"]
+radial_velocity_min = -2.23517e-05
+radial_velocity_max = 0.999978
+gravity = Vector3(0, 0, 0)
+scale_min = 0.4
+scale_max = 0.6
+scale_curve = SubResource("CurveTexture_u4r8o")
+
+[sub_resource type="SphereMesh" id="SphereMesh_qjj2j"]
+
 [node name="EnemyProjectile" type="Area3D"]
 script = ExtResource("1_h4cry")
 
@@ -17,8 +39,17 @@ script = ExtResource("1_h4cry")
 shape = SubResource("SphereShape3D_uh235")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 mesh = SubResource("SphereMesh_s847j")
 surface_material_override/0 = SubResource("StandardMaterial3D_4bqrs")
+
+[node name="Soap" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_re4p3")
+amount = 20
+lifetime = 3.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_o31d0")
+draw_pass_1 = SubResource("SphereMesh_qjj2j")
 
 [connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

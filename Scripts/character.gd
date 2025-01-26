@@ -3,6 +3,7 @@ extends CharacterBody3D
 @export var xLimit = Vector2(-5, 1000)
 @export var vfx1 : PackedScene
 @export var vfxSalto : PackedScene
+@export var vfxPop : PackedScene
 
 const max_jumps = 5
 
@@ -27,6 +28,7 @@ var musicSlow : AudioStreamPlayer2D
 
 func _ready() -> void:
 	$CharacterBase/AnimationPlayer.play("Idle 1")
+	
 	musicFast = AudioManagerGlobal.play_sound("res://Audio/gamplay_fast.ogg")
 	musicSlow = AudioManagerGlobal.play_sound("res://Audio/gamplay_slow.ogg")
 	# musicFast.volume_db = -20
@@ -174,9 +176,19 @@ func fall():
 	cant_jump = true
 	if(velocity.y > -0.5):
 		velocity.y = -0.5
-	target_bubble_size = 0.001
 	jump_count = 0
-	changeAnimation("JumpCortado")
+	
+	if(target_bubble_size > 0.2):
+		changeAnimation("JumpCortado")
+		var a = AudioManagerGlobal.play_sound("res://Audio/burbuja_rompe.ogg")
+		a.volume_db = 10
+					
+		var vfx = vfxPop.instantiate()
+		get_tree().root.add_child(vfx)
+		(vfx as GPUParticles3D).position = position + Vector3(0,-0.7,0)
+		(vfx as GPUParticles3D).restart()
+	
+	target_bubble_size = 0.001
 
 
 func _on_bubble_area_shape_entered(area_rid: RID, area: Area3D, area_shape_index: int, local_shape_index: int) -> void:
