@@ -36,9 +36,7 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	if(Input.is_action_pressed("ui_cancel")):
-		get_tree().quit()
-		
-		
+		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 
 	if(dead):
 		return
@@ -175,8 +173,8 @@ func bubbleSizeZero():
 
 func fall():
 	cant_jump = true
-	if(velocity.y > -0.5):
-		velocity.y = -0.5
+	if(velocity.y > .5):
+		velocity.y = .5
 	jump_count = 0
 	
 	if(target_bubble_size > 0.2):
@@ -220,7 +218,7 @@ func death():
 	
 	AudioManagerGlobal.play_sound("res://Audio/muerte.ogg")
 	
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(1.7).timeout
 	
 	musicFast.stop()
 	musicSlow.stop()

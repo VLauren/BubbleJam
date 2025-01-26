@@ -35,7 +35,7 @@ _subresources={
 "materials": {
 "M_Pared": {
 "use_external/enabled": true,
-"use_external/path": "res://Materials/Escenario/M_Pared.tres"
+"use_external/path": "res://Materials/Escenario/M_Pared_2.tres"
 },
 "M_ParedOscuro": {
 "use_external/enabled": true,

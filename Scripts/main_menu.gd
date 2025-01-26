@@ -8,7 +8,7 @@ func _ready() -> void:
 	music = AudioManagerGlobal.play_sound("res://Audio/menu_music.ogg")
 
 func _process(delta: float) -> void:
-	if(Time.get_ticks_msec() - startTime < 1000):
+	if(Time.get_ticks_msec() - startTime < 600):
 		return
 		
 	# if(Input.is_action_just_pressed("ui_accept")):
