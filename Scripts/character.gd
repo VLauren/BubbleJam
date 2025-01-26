@@ -35,7 +35,9 @@ func _ready() -> void:
 	# musicSlow.volume_db = -20
 	
 func _process(delta: float) -> void:
-	if(Input.is_action_pressed("ui_cancel")):
+	if(Input.is_action_pressed("ui_cancel")):	
+		musicFast.stop()
+		musicSlow.stop()
 		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 
 	if(dead):
